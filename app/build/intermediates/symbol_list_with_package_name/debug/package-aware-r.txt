@@ -664,6 +664,9 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable buson
 drawable dag
+drawable dolar
+drawable dovizarkaplan
+drawable euro
 drawable gecearkaplan
 drawable gunarkaplan
 drawable ic_kafein_launcher_background
@@ -790,6 +793,8 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imgDolar
+id imgEuro
 id imgHavaDurumu
 id info
 id invisible
@@ -867,6 +872,10 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
+id textView3
+id textView4
+id textView5
 id time
 id title
 id titleDividerNoCustom
@@ -874,9 +883,13 @@ id title_template
 id top
 id topPanel
 id tvAciklama
+id tvCurrency
+id tvDolar
+id tvEuro
 id tvSantigrad
 id tvSicaklik
 id tvTarih
+id tvWeather
 id unchecked
 id uniform
 id up
@@ -924,6 +937,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_currency
+layout activity_home
 layout activity_main
 layout custom_dialog
 layout notification_action

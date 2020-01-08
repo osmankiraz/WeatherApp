@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dovizarkaplan"
+    tools:context=".CurrencyActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="EURO - EUR"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/imgEuro"
+        app:layout_constraintTop_toTopOf="@+id/imgEuro" />
+
+    <ImageView
+        android:id="@+id/imgDolar"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dolar" />
+
+    <ImageView
+        android:id="@+id/imgEuro"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgDolar"
+        app:layout_constraintStart_toStartOf="@+id/imgDolar"
+        app:layout_constraintTop_toBottomOf="@+id/imgDolar"
+        app:srcCompat="@drawable/euro" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="AMERİKAN DOLARI - USD"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toEndOf="@+id/imgDolar"
+        app:layout_constraintTop_toTopOf="@+id/imgDolar" />
+
+    <TextView
+        android:id="@+id/tvDolar"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:text="USD"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvEuro"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:text="EURO"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TL"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDolar"
+        app:layout_constraintStart_toEndOf="@+id/tvDolar"
+        app:layout_constraintTop_toTopOf="@+id/tvDolar" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TL"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEuro"
+        app:layout_constraintStart_toEndOf="@+id/tvEuro"
+        app:layout_constraintTop_toTopOf="@+id/tvEuro" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.havadurumuapp.MainActivity" >
+        <activity android:name="com.example.havadurumuapp.CurrencyActivity" />
+        <activity android:name="com.example.havadurumuapp.MainActivity" />
+        <activity android:name="com.example.havadurumuapp.HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
