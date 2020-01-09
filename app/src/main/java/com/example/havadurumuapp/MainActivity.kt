@@ -31,6 +31,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() , AdapterView.OnItemSelectedListener {
 
+
     var tvSehir: TextView?=null
     var location:SimpleLocation?=null
     var latitude:String?=null

@@ -100,4 +100,19 @@
         app:layout_constraintBottom_toBottomOf="@+id/tvEuro"
         app:layout_constraintStart_toEndOf="@+id/tvEuro"
         app:layout_constraintTop_toTopOf="@+id/tvEuro" />
+
+    <TextView
+        android:id="@+id/txtDenemeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="bakalım yazacak mı "
+        android:textColor="#F5EAEA"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgEuro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

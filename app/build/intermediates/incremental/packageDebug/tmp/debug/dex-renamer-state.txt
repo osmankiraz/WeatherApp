@@ -1,4 +1,4 @@
-#Wed Jan 08 16:41:04 EET 2020
+#Thu Jan 09 16:21:29 EET 2020
 base.0=C\:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
