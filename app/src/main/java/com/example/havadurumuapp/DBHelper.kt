@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import android.widget.Toast
 
 class DBHelper(val context: Context) :
@@ -46,6 +47,34 @@ class DBHelper(val context: Context) :
             Toast.LENGTH_SHORT
         ).show()
     }
+
+
+    fun isEmptyTable():Boolean{
+        var booleanEmpty=true
+        val db=this.readableDatabase
+        val cursor=db.rawQuery("SELECT COUNT(*) FROM $TABLE_NAME",null)
+        if(cursor !=null && cursor.moveToFirst()){
+            booleanEmpty=(cursor.getInt(0)==0)
+        }
+        cursor.close()
+        return booleanEmpty
+
+    }
+
+    fun lastValue():String{
+        val db =this.readableDatabase
+        var lastValueStr=""
+        val strQuery="SELECT * FROM $TABLE_NAME ORDER BY $COL_ID DESC LIMIT 1"
+        val cursor=db.rawQuery(strQuery,null)
+        val lastDollarIx=cursor.getColumnIndex(COL_DOLAR)
+
+        if(cursor != null && cursor.moveToLast()){
+            lastValueStr=cursor.getString(lastDollarIx)
+
+        }
+        return lastValueStr
+    }
+
 
     fun readData(): MutableList<ParaBirimleriTablo> {
         val paraListesi = mutableListOf<ParaBirimleriTablo>()

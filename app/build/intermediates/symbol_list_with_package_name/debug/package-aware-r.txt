@@ -762,6 +762,9 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnDelete
+id btnRead
+id btnSonKayit
 id buttonPanel
 id center_vertical
 id chains
@@ -890,6 +893,7 @@ id tvSantigrad
 id tvSicaklik
 id tvTarih
 id tvWeather
+id txtDenemeMedium
 id unchecked
 id uniform
 id up

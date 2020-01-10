@@ -20,16 +20,27 @@ class CurrencyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_currency)
 
-        dolarVeriGetir("USD")
+        dolarVeriGetir()
         //dolarVeriGetir("EUR")
         //euroVeriGetir()
 
+        btnSonKayit.setOnClickListener {
+            val lastDolarDegeri=dbMoney.lastValue()
+            Log.e("OSMAN","SON DOLAR DEGERİ BU MU ==="+lastDolarDegeri)
+        }
+
+        btnDelete.setOnClickListener {
+            dbMoney.deleteAllData()
+        }
+        btnRead.setOnClickListener {
+           showData(dbMoney.readData())
+        }
 
     }
 
-    fun dolarVeriGetir(currencyUnit: String) {
+    fun dolarVeriGetir() {
 
-        val dolarUrl = "https://api.exchangeratesapi.io/latest?base=" + currencyUnit
+        val dolarUrl = "https://api.exchangeratesapi.io/latest?base=USD"
         val dovizObje = JsonObjectRequest(
             Request.Method.GET,
             dolarUrl,
@@ -40,21 +51,31 @@ class CurrencyActivity : AppCompatActivity() {
                     var rates = response?.getJSONObject("rates")
                     dovizTr = rates?.getString("TRY")
 
-                    if (currencyUnit == "USD") {
-                        tvDolar.text = dovizTr.toString()
-                    } else {
-                        tvEuro.text = dovizTr.toString()
+                    var bosMu:Boolean?=null
+                    bosMu=dbMoney.isEmptyTable()
+
+                    if (bosMu == false) // F A L S E    İ S E   D O L U D U R    D İ Ğ E R   K O N T R O L L E R   Y A P I L M A L I D I R
+                    {
+
+                        //Log.e("OSMAN","Deneme bool boş mu dolu mu ???"+ denemeBool)
+
+
+                    }else{  // T R U E  B O Ş  İ S E    Y A P I L A C A K L A R
+
+                            dbMoney.insertData(ParaBirimleriTablo(dollar=dovizTr.toString()))
+                            tvDolar.text = dovizTr.toString()
+
+
+
+
                     }
 
-                    dbMoney.insertData(
-                        ParaBirimleriTablo(
-                            dollar = "5.66",
-                            euro = "6.911",
-                            date = "09012020"
-                        )
-                    )
-                    showData(dbMoney.readData())
-                    //Log.e("Doviz", "Medium deneme : " +)
+
+                   /*
+                    var denemeBool:Boolean?=null
+                    denemeBool=dbMoney.isEmptyTable()
+                    Log.e("OSMAN","Deneme bool boş mu dolu mu ???"+ denemeBool)
+                    */
 
                 }
             },
@@ -68,8 +89,6 @@ class CurrencyActivity : AppCompatActivity() {
 
 
     }
-
-
 
     fun euroVeriGetir() {
         val euroUrl = "https://api.exchangeratesapi.io/latest?base=EUR"
@@ -95,6 +114,8 @@ class CurrencyActivity : AppCompatActivity() {
             })
         MySingleton.getInstance(this).addToRequestQueue(dovizObje2)
     }
+
+
 
     fun showData(list: MutableList<ParaBirimleriTablo>) {
         txtDenemeMedium.text = ""
