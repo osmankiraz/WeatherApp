@@ -20,7 +20,7 @@ class CurrencyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_currency)
 
-        dolarVeriGetir()
+        dolarVeriGetir("USD")
         //dolarVeriGetir("EUR")
         //euroVeriGetir()
 
@@ -33,14 +33,14 @@ class CurrencyActivity : AppCompatActivity() {
             dbMoney.deleteAllData()
         }
         btnRead.setOnClickListener {
-           showData(dbMoney.readData())
+          showData(dbMoney.readData())
         }
 
     }
 
-    fun dolarVeriGetir() {
+    fun dolarVeriGetir(currencyUnit:String) {
 
-        val dolarUrl = "https://api.exchangeratesapi.io/latest?base=USD"
+        val dolarUrl = "https://api.exchangeratesapi.io/latest?base="+currencyUnit
         val dovizObje = JsonObjectRequest(
             Request.Method.GET,
             dolarUrl,
@@ -52,18 +52,21 @@ class CurrencyActivity : AppCompatActivity() {
                     dovizTr = rates?.getString("TRY")
 
                     var bosMu:Boolean?=null
+                    dbMoney.insertData(ParaBirimleriTablo(dollar="4545",euro = "7878",date="010101"))
                     bosMu=dbMoney.isEmptyTable()
 
                     if (bosMu == false) // F A L S E    İ S E   D O L U D U R    D İ Ğ E R   K O N T R O L L E R   Y A P I L M A L I D I R
                     {
-
+                        Log.e("OSMAN","AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                        tvDolar.text = dovizTr.toString()
                         //Log.e("OSMAN","Deneme bool boş mu dolu mu ???"+ denemeBool)
 
 
                     }else{  // T R U E  B O Ş  İ S E    Y A P I L A C A K L A R
 
-                            dbMoney.insertData(ParaBirimleriTablo(dollar=dovizTr.toString()))
-                            tvDolar.text = dovizTr.toString()
+                            //dbMoney.insertData(ParaBirimleriTablo(dollar=dovizTr.toString()),"CurrencyDollar")
+
+                            //tvDolar.text = dovizTr.toString()
 
 
 
@@ -121,7 +124,7 @@ class CurrencyActivity : AppCompatActivity() {
         txtDenemeMedium.text = ""
         list.forEach {
             txtDenemeMedium.text =
-                txtDenemeMedium.text.toString() + "\n" + it.dollar + " " + it.euro + " " + it.date
+                txtDenemeMedium.text.toString() + "\n" + it.dollar + " "+it.euro + " " + it.date
         }
     }
 }

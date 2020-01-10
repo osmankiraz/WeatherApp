@@ -22,16 +22,13 @@ class DBHelper(val context: Context) :
 
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTable =
-            "CREATE TABLE $TABLE_NAME ($COL_ID  INTEGER PRIMARY KEY AUTOINCREMENT,$COL_DOLAR VARCHAR,$COL_EURO VARCHAR ,$COL_DATE VARCHAR ) "
+        // DOLAR TABLOSU OLUŞTURMA
+        val createTable = "CREATE TABLE $TABLE_NAME ($COL_ID  INTEGER PRIMARY KEY AUTOINCREMENT,$COL_DOLAR VARCHAR ,$COL_EURO VARCHAR ,$COL_DATE VARCHAR ) "
         db?.execSQL(createTable)
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-
-
     }
-
 
     fun insertData(paraBirimleriTablo: ParaBirimleriTablo) {
         val sqLiteDB = this.writableDatabase
