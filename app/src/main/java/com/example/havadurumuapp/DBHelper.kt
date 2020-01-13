@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import android.widget.Toast
 
 class DBHelper(val context: Context) :
@@ -12,11 +13,6 @@ class DBHelper(val context: Context) :
         private val DATABASE_NAME = "SQLITE_DATABASE"   //database adı
         private val DATABASE_VERSION = 1
     }
-
-    // E U R O
-    
-
-
     // D O L L A R
     private val TABLE_NAME = "Currency"
     private val COL_ID = "id"
@@ -34,6 +30,9 @@ class DBHelper(val context: Context) :
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
     }
 
+
+
+
     fun insertData(paraBirimleriTablo: ParaBirimleriTablo) {
         val sqLiteDB = this.writableDatabase
         val contentValues = ContentValues()
@@ -50,6 +49,8 @@ class DBHelper(val context: Context) :
     }
 
 
+
+
     fun isEmptyTable():Boolean{
         var booleanEmpty=true
         val db=this.readableDatabase
@@ -61,6 +62,8 @@ class DBHelper(val context: Context) :
         return booleanEmpty
 
     }
+
+
 
     fun lastValue():String{
         val db =this.readableDatabase
@@ -76,6 +79,8 @@ class DBHelper(val context: Context) :
         return lastValueStr
     }
 
+
+
     fun lastDateValue():String{
         val db =this.readableDatabase
         var lastDateValueStr=""
@@ -89,6 +94,8 @@ class DBHelper(val context: Context) :
         }
         return lastDateValueStr
     }
+
+
 
     fun readData(): MutableList<ParaBirimleriTablo> {
         val paraListesi = mutableListOf<ParaBirimleriTablo>()
@@ -112,6 +119,8 @@ class DBHelper(val context: Context) :
         sqLiteDB.close()
         return paraListesi
     }
+
+
 
     fun deleteAllData() {
 

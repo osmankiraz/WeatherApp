@@ -19,23 +19,21 @@ class CurrencyActivity : AppCompatActivity() {
     var apiEDateStr: String? = null
     var currentDateTime: String? = null
     val dbMoney by lazy { DBHelper(this) }
+    val dbEuro by lazy { DBEuroHelper(this) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_currency)
-
         currentDateTime = tarihYazdir()
 
-
         dolarVeriGetir("USD")
-        //dolarVeriGetir("EUR")
-        //euroVeriGetir()
+        euroVeriGetir()
 
         btnSonKayit.setOnClickListener {
             val lastDolarDegeri = dbMoney.lastValue()
             Log.e("OSMAN", "SON DOLAR DEGERİ BU MU ===" + lastDolarDegeri)
             Log.e("OSMAN", "CURRENT TİME DEĞİŞKENİ ===" + currentDateTime)
             Log.e("OSMAN", " APİ DATE VERİSİ KONTROL === " + apiDateStr)
-            var lastDBDate:String=dbMoney.lastDateValue()
+            var lastDBDate: String = dbMoney.lastDateValue()
             Log.e("OSMAN", " SON DB DATE VERİSİ === " + lastDBDate)
         }
 
@@ -69,22 +67,24 @@ class CurrencyActivity : AppCompatActivity() {
 
                     if (bosMu == false) // F A L S E    İ S E   D O L U D U R    D İ Ğ E R   K O N T R O L L E R   Y A P I L M A L I D I R
                     {
-                        var lastDBDate:String=dbMoney.lastDateValue()
+                        var lastDBDate: String = dbMoney.lastDateValue()
 
 
                         // NORMALDE SON APİ DATE İLE CURRENTTİME A  EŞİT OLDUĞUNU KONTROL EDİP DENEMELERİ YAPICAKTIM AMA
                         // APİ DATE İ HİÇ BİR ZAMAN CURRENTTİME A EŞİT DEĞİL. KULLANDIĞIM APİ SON İŞ GÜNÜNÜ VERMEKTE O YÜZDEN
                         // DATEBASEDE Kİ SON KAYDEDİLEN VERİNİN DATE İLE CURRENT TİME KONTROL EDEREK DEVAM EDİYORUM
-                        if (currentDateTime ==lastDBDate /*apiDateStr*/) {
+                        if (currentDateTime == lastDBDate /*apiDateStr*/) {
 
                             // T A R İ H L E R   E Ş İ T   İ S E   S O N   V E R İ Y İ     Y A  Z D I R
                             var sonDolarDeger = dbMoney.lastValue()
                             tvDolar.text = sonDolarDeger
-                            Log.e("OSMAN", " TARİHLER EŞİT  === " )
+                            Log.e("OSMAN", " TARİHLER EŞİT DOLAR ICIN ")
+                            Log.e("OSMAN", " TARİHLER EŞİT DOLAR ICIN ")
+
 
 
                         } else { //  T A R İ H L E R   E Ş İ T    D E Ğ İ L     İ S E
-                            Log.e("OSMAN", " TARİHLER EŞİT DEĞİL   === ")
+                            Log.e("OSMAN", " TARİHLER EŞİT DEĞİL DOLAR ICIN ")
                             dbMoney.insertData(
                                 ParaBirimleriTablo(
                                     dollar = dovizTr.toString(),
@@ -94,8 +94,6 @@ class CurrencyActivity : AppCompatActivity() {
                             )
                             var sonDolarDeger = dbMoney.lastValue()
                             tvDolar.text = sonDolarDeger
-
-
                         }
 
                     } else {  // T R U E  B O Ş  İ S E    Y A P I L A C A K L A R
@@ -137,16 +135,50 @@ class CurrencyActivity : AppCompatActivity() {
                     tvEuro.text = dovizEuroTr.toString()
 
 
-                    var jsonDate=response?.getString("date")
-                    apiEDateStr=jsonDate
+                    var jsonDate = response?.getString("date")
+                    apiEDateStr = jsonDate
 
 
                     var bosMu: Boolean? = null
-                    bosMu = dbMoney.isEmptyTable()
+                    bosMu = dbEuro.isEmptyEuroTable()
+                    Log.e("OSMAN", "EURO TABLOSU BOŞ OLMASI LAZIM ===" + bosMu.toString())
+
+                    if (bosMu == false) {  // F A L S E    İ S E   D O L U D U R    D İ Ğ E R   K O N T R O L L E R   Y A P I L M A L I D I R
+
+                        var lastDBDate: String = dbEuro.lastEuroDateValue()
+                        if (currentDateTime == lastDBDate) {
+                            // T A R İ H L E R   E Ş İ T   İ S E   S O N   V E R İ Y İ     Y A  Z D I R
+                            Log.e("OSMAN", " TARİHLER EŞİT EURO ICIN ")
+                            var sonEuroDeger = dbEuro.lastEuroValue()
+                            tvEuro.text = sonEuroDeger
 
 
+                        } else {//  T A R İ H L E R   E Ş İ T    D E Ğ İ L     İ S E
+                            Log.e("OSMAN", " TARİHLER EŞİT DEĞİL EURO ICIN ")
+                            dbEuro.insertEuroData(
+                                EuroTablo(
+                                    euro = dovizEuroTr.toString(),
+                                    date = currentDateTime.toString()
+                                )
+                            )
+                            var sonEuroDeger = dbEuro.lastEuroValue()
+                            tvEuro.text = sonEuroDeger
+
+                        }
 
 
+                    } else {// T R U E  B O Ş  İ S E    Y A P I L A C A K L A R
+
+                        dbEuro.insertEuroData(
+                            EuroTablo(
+                                euro = dovizEuroTr.toString(),
+                                date = currentDateTime.toString()
+                            )
+                        )
+                        var euroSonDeger = dbEuro.lastEuroValue()
+                        tvEuro.text = euroSonDeger
+
+                    }
 
 
                 }

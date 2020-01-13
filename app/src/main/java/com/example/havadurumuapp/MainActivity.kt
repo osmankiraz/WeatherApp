@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity() , AdapterView.OnItemSelectedListener {
 
 
         }else{
+            // SPİNNERDAN SECİLEN SEHRİN VERİLERİNİN BASILDIĞI KISIM
             var secilenSehir=parent?.getItemAtPosition(position).toString()
             tvSehir=view as TextView
             verileriGetir(secilenSehir)
