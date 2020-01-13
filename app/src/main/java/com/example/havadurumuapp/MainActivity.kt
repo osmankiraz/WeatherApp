@@ -196,10 +196,9 @@ class MainActivity : AppCompatActivity() , AdapterView.OnItemSelectedListener {
         val havaDurumuObje=JsonObjectRequest(Request.Method.GET,ankaraUrl,null, object : Response.Listener<JSONObject>{
             override fun onResponse(response: JSONObject?) {
                 var main =response?.getJSONObject("main")
-
-
                 var sicaklik=main?.getInt("temp")
                 tvSicaklik.text=sicaklik.toString()
+
                 var sehirAdi=response?.getString("name")
                 //tvSehir.text=sehirAdi
 

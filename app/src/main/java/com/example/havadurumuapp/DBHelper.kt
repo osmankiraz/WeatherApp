@@ -4,7 +4,6 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
 import android.widget.Toast
 
 class DBHelper(val context: Context) :
@@ -14,6 +13,11 @@ class DBHelper(val context: Context) :
         private val DATABASE_VERSION = 1
     }
 
+    // E U R O
+    
+
+
+    // D O L L A R
     private val TABLE_NAME = "Currency"
     private val COL_ID = "id"
     private val COL_DOLAR = "dollar"
@@ -72,6 +76,19 @@ class DBHelper(val context: Context) :
         return lastValueStr
     }
 
+    fun lastDateValue():String{
+        val db =this.readableDatabase
+        var lastDateValueStr=""
+        val strQuery="SELECT * FROM $TABLE_NAME ORDER BY $COL_ID DESC LIMIT 1"
+        val cursor=db.rawQuery(strQuery,null)
+        val lastDollarIx=cursor.getColumnIndex(COL_DATE)
+
+        if(cursor != null && cursor.moveToLast()){
+            lastDateValueStr=cursor.getString(lastDollarIx)
+
+        }
+        return lastDateValueStr
+    }
 
     fun readData(): MutableList<ParaBirimleriTablo> {
         val paraListesi = mutableListOf<ParaBirimleriTablo>()
