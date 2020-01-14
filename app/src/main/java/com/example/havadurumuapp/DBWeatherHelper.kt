@@ -28,7 +28,7 @@ class DBWeatherHelper(val context: Context) : SQLiteOpenHelper(
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTable =
-            "CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT,$COL_CITY VARCHAR,$COL_CG INT, $COL_DESC VARCHAR,$COL_DATE VARCHAR,$COL_ICON VARCHAR)"
+            "CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY ,$COL_CITY VARCHAR,$COL_CG  VARCHAR, $COL_DESC VARCHAR,$COL_DATE VARCHAR,$COL_ICON VARCHAR)"
         db?.execSQL(createTable)
 
     }
@@ -54,6 +54,7 @@ class DBWeatherHelper(val context: Context) : SQLiteOpenHelper(
             Toast.LENGTH_SHORT
         ).show()
 
+        sqLiteDB.close()
 
     }
 
@@ -67,6 +68,109 @@ class DBWeatherHelper(val context: Context) : SQLiteOpenHelper(
         cursor.close()
         return isEmpty
     }
+
+    // DOĞRU ÇALIŞMIYOR
+    fun isAddCity(): Boolean {
+        var isAdd = true
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT COUNT($COL_CITY) FROM $TABLE_NAME ", null)
+        if (cursor != null && cursor.moveToFirst()) {
+            isAdd = (cursor.getInt(0) == 0)
+        }
+        cursor.close()
+        return isAdd
+    }
+
+    fun kacTane(cityName: String): Int {
+        val db = this.readableDatabase
+        var lastValue = 0
+        val strQuery = "SELECT COUNT($COL_ID) FROM $TABLE_NAME WHERE city='$cityName'  "
+        val cursor = db.rawQuery(strQuery, null)
+        //val index=cursor.getColumnIndex(COL_ID)
+        val index2 = 0
+
+        if (cursor != null && cursor.moveToFirst()) {
+            lastValue = cursor.getInt(index2)
+        }
+        cursor.close()
+        db.close()
+        return lastValue
+    }
+
+
+    // A R A N A N   Ş E H R İ N     İ S M İ N İ     D Ö N D Ü R E N     F O N K S İ Y O N
+    fun findSelectedCity(cityName: String): String {
+        val db = this.readableDatabase
+        var selectedCityName = ""
+        val strQuery = "SELECT $COL_CITY FROM $TABLE_NAME WHERE city='$cityName' "
+        val cursor = db.rawQuery(strQuery, null)
+        val cityIx = cursor.getColumnIndex(COL_CITY)
+
+        if (cursor != null && cursor.moveToNext()) {
+            selectedCityName = cursor.getString(cityIx)
+        }
+
+        return selectedCityName
+    }
+
+    // A R A N A N   Ş E H R İ N     A C I K L A M A S I N I      D Ö N D Ü R E N     F O N K S İ Y O N
+    fun findSelectedCityDescription(cityName: String): String {
+        val db = this.readableDatabase
+        var selectedCityDescription = ""
+        val strQuery = "SELECT $COL_DESC FROM $TABLE_NAME WHERE city='$cityName' "
+        val cursor = db.rawQuery(strQuery, null)
+        val descIx = cursor.getColumnIndex(COL_DESC)
+
+        if (cursor != null && cursor.moveToNext()) {
+            selectedCityDescription = cursor.getString(descIx)
+        }
+        return selectedCityDescription
+    }
+
+    // A R A N A N   Ş E H R İ N    D A T E     D Ö N D Ü R E N     F O N K S İ Y O N
+    fun findSelectedCityDate(cityName: String): String {
+        val db = this.readableDatabase
+        var selectedCityDate = ""
+        val strQuery = "SELECT $COL_DATE FROM $TABLE_NAME WHERE city='$cityName'"
+        val cursor = db.rawQuery(strQuery, null)
+        val dateIx = cursor.getColumnIndex(COL_DATE)
+
+        if (cursor != null && cursor.moveToNext()) {
+            selectedCityDate = cursor.getString(dateIx)
+        }
+        return selectedCityDate
+    }
+
+    // A R A N A N   Ş E H R İ N    I C O N     D Ö N D Ü R E N     F O N K S İ Y O N
+    fun findSelectedCityIcon(cityName: String): String {
+        val db = this.readableDatabase
+        var selectedCityIcon = ""
+        val strQuery = "SELECT $COL_ICON FROM $TABLE_NAME WHERE city='$cityName'"
+        val cursor = db.rawQuery(strQuery, null)
+        val iconIx = cursor.getColumnIndex(COL_ICON)
+
+        if (cursor != null && cursor.moveToNext()) {
+            selectedCityIcon = cursor.getString(iconIx)
+        }
+        return selectedCityIcon
+    }
+
+    // A R A N A N   Ş E H R İ N     S I C A K L I Ğ I N I    D Ö N D Ü R E N     F O N K S İ Y O N
+    fun findSelectedCityTemp(cityName: String): String {
+        val db = this.readableDatabase
+        var selectedCityTemp = ""
+        val strQuery = "SELECT $COL_CG FROM $TABLE_NAME WHERE city='$cityName'"
+        val cursor = db.rawQuery(strQuery, null)
+        val tempIx = cursor.getColumnIndex(COL_CG)
+
+        if (cursor != null && cursor.moveToNext()) {
+            selectedCityTemp = cursor.getString(tempIx)
+        }
+        db.close()
+        cursor.close()
+        return selectedCityTemp
+    }
+
 
     // LAST VALUE FONKSİYONUNA GEREK YOK DÖVİZ SİSTEMİNDE OLDUĞU GİBİ
     // SONRADAN BAK HATA OLABİLİR   !  ! ! !! ! ! !! ! !      !    !
@@ -108,10 +212,19 @@ class DBWeatherHelper(val context: Context) : SQLiteOpenHelper(
 
     }
 
-    fun deleteAllData(){
-        val sqliteDB=this.writableDatabase
-        sqliteDB.delete(TABLE_NAME,null, null)
+    fun deleteAllData() {
+        val sqliteDB = this.writableDatabase
+        sqliteDB.delete(TABLE_NAME, null, null)
         sqliteDB.close()
     }
+
+    fun deleteSelectedCity(cityName: String) {
+        val sqliteDB = this.writableDatabase
+        val sqlQuery = "DELETE FROM $TABLE_NAME WHERE city='$cityName'"
+        sqliteDB.execSQL(sqlQuery)
+        sqliteDB.close()
+
+    }
+
 
 }
