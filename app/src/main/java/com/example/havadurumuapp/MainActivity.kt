@@ -210,14 +210,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 override fun onResponse(response: JSONObject?) {
                     var main = response?.getJSONObject("main")
                     var sicaklik = main?.getInt("temp")
-                    tvSicaklik.text = sicaklik.toString()           //////////////////////////////////////
+                    tvSicaklik.text =
+                        sicaklik.toString()           //////////////////////////////////////
 
                     var sehirAdi = response?.getString("name")
                     //tvSehir.text=sehirAdi
 
                     var weather = response?.getJSONArray("weather")
                     var aciklama = weather?.getJSONObject(0)?.getString("description")
-                    tvAciklama.text = aciklama                      /////////////////////////////////////
+                    tvAciklama.text =
+                        aciklama                      /////////////////////////////////////
                     var icon = weather?.getJSONObject(0)?.getString("icon")
 
                     //dbWeather.insertDataWH(WeatherTablo(city=sehir,temp =sicaklik.toString(),description = aciklama.toString(),date ="14-01-2020",icon = "icon_09"))
@@ -228,63 +230,86 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     //dbWeather.deleteAllData()
                     var sehirVarmi: Boolean
                     sehirVarmi = dbWeather.isEmptyTable()
-                    Log.e("OSMAN", "TABLO BOŞ İSE TRU GELECEK?  ? ===" + sehirVarmi)
+                    Log.e("OSMAN", "TABLO BOŞ İSE TRU GELECEK? ? = " + sehirVarmi)
                     // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                     var kacTaneSehir = 0
                     kacTaneSehir = dbWeather.kacTane(sehir)
-                    Log.e("OSMAN", "ANKARADAN KAÇ TANE VAR ?  ? ===" + kacTaneSehir)
+                    Log.e("OSMAN", sehir+" ŞEHRİNDEN  DB'DE KAÇ TANE VAR ? = " + kacTaneSehir)
 
-                    var strCityName=""
-                    strCityName=dbWeather.findSelectedCity(sehir)
-                    Log.e("OSMAN", "FIND SEHİR ADI GETİRTME ?  ? ===" + strCityName)
+                    var strCityName = ""
+                    strCityName = dbWeather.findSelectedCity(sehir)
+                    Log.e("OSMAN", "FIND SEHİR ADI GETİRTME ? = " + strCityName)
 
-                    var strCityTemp=""
-                    strCityTemp=dbWeather.findSelectedCityTemp(sehir)
-                    Log.e("OSMAN", "FIND SEHİR SICAKLIĞI GETİRTME ?  ? ===" + strCityTemp)
+                    var strCityTemp = ""
+                    strCityTemp = dbWeather.findSelectedCityTemp(sehir)
+                    Log.e("OSMAN", "FIND SEHİR SICAKLIĞI GETİRTME ? = " + strCityTemp)
 
-                    var strCityDescription=""
-                    strCityDescription=dbWeather.findSelectedCityDescription(sehir)
-                    Log.e("OSMAN", "FIND SEHİR DESCRİPTION GETİRTME ?  ? ===" + strCityDescription)
+                    var strCityDescription = ""
+                    strCityDescription = dbWeather.findSelectedCityDescription(sehir)
+                    Log.e("OSMAN", "FIND SEHİR DESCRİPTION GETİRTME ? = " + strCityDescription)
 
-                    var strCityDate=""
-                    strCityDate=dbWeather.findSelectedCityDate(sehir)
-                    Log.e("OSMAN", "FIND SEHİR DATE GETİRTME ?  ? ===" + strCityDate)
+                    var strCityDate = ""
+                    strCityDate = dbWeather.findSelectedCityDate(sehir)
+                    Log.e("OSMAN", "FIND SEHİR DATE GETİRTME ? = " + strCityDate)
 
-                    var strCityIcon=""
-                    strCityIcon=dbWeather.findSelectedCityIcon(sehir)
-                    Log.e("OSMAN", "FIND SEHİR ICON GETİRTME ?  ? ===" + strCityIcon)
+                    var strCityIcon = ""
+                    strCityIcon = dbWeather.findSelectedCityIcon(sehir)
+                    Log.e("OSMAN", "FIND SEHİR ICON GETİRTME ? = " + strCityIcon)
 
                     //SEÇİLEN SEHİRDEN TABLODA KAÇ TANE VAR 1 Mİ 0 MI
                     if (kacTaneSehir == 1) { // 1 TANE İSE YAPILICAKLAR
                         // tabloya eklenen bulunacak ve değerler karşılaştırılıcak
                         //degerler aynı ise db deb yaz || api deki degerler yeni ise api yi db ye yaz || db den ekrana bas
-
+                        Log.e("OSMAN", "SEÇİLEN ŞEHİR DB DE 1 TANE ÇIKTI")
                         //KARŞILAŞTIRMAYI YAPAN IF KOŞULLARI
-                        if(strCityTemp.equals(sicaklik.toString()) && strCityDescription.equals(aciklama)  && strCityDate.equals(tarihYazdir2()) && strCityIcon.equals(icon)     ){
-                            Log.e("OSMAN","KARŞILATIRMADA HEPSİ EŞİT ÇIKTI")
+                        if (strCityTemp.equals(sicaklik.toString()) && strCityDescription.equals(
+                                aciklama
+                            ) && strCityDate.equals(tarihYazdir2()) && strCityIcon.equals(icon)
+                        ) {
+                            Log.e("OSMAN", "KARŞILATIRMADA HEPSİ EŞİT ÇIKTI")
+                            Log.e("OSMAN", "VERİLER SADECE DB DEN ALINARAK YAZILDI")
 
-                            tvSicaklik.text=strCityTemp
-                            tvAciklama.text=strCityDescription
-                            tvTarih.text=tarihYazdir()
+                            tvSicaklik.text = strCityTemp
+                            tvAciklama.text = strCityDescription
+                            tvTarih.text = tarihYazdir()
                             geceGunduzIcon(icon)
 
 
-                        }else{
+                        } else {
                             // HERHANGİ BİR TANE VERİ APİDEN DEĞİŞTİĞSE O SATIRI SİL VE YENİ EKLE DB YE
                             //AYNI ŞEHİRDEN 2 TANE OLMASINI İSTEMİYORUM         YA 1 YA 0
+
+                            Log.e("OSMAN", "KARŞILATIRMADA HEPSİ EŞİT ÇIKMADI")
+                            dbWeather.deleteSelectedCity(sehir) // ÖNCE ŞEHİR VERİLERİ SİLİNDİ
+
+                            dbWeather.insertDataWH( // DB YE YENİ VERİLER EKLENDİ
+                                WeatherTablo(
+                                    city = sehirAdi.toString(),
+                                    temp = sicaklik.toString(),
+                                    description = aciklama.toString(),
+                                    date = tarihYazdir2(),
+                                    icon = icon.toString()
+                                )
+                            )
+
+                            var yeniSehirSicaklik=dbWeather.findSelectedCityTemp(sehir)
+                            var yeniSehirAciklama=dbWeather.findSelectedCityDescription(sehir)
+                            var yeniSehirIcon=dbWeather.findSelectedCityIcon(sehir)
+
+                            tvSicaklik.text=yeniSehirSicaklik
+                            tvAciklama.text=yeniSehirAciklama
+                            tvTarih.text=tarihYazdir()
+                            geceGunduzIcon(yeniSehirIcon)
+                            Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
                         }
 
 
-
-
-
-
-
-
                     } else if (kacTaneSehir == 0) {  // 0 TANE İSE YAPILICAKLAR
                         //tabloya eklenecek
+
+                        Log.e("OSMAN", "SEÇİLEN ŞEHİR DB DE HİÇ ÇIKMADI")
                         dbWeather.insertDataWH(
                             WeatherTablo(
                                 city = sehirAdi.toString(),
@@ -295,12 +320,41 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             )
                         )//tabloya eklenecek
 
+                        var yeniSehirSicaklik2=dbWeather.findSelectedCityTemp(sehir)
+                        var yeniSehirAciklama2=dbWeather.findSelectedCityDescription(sehir)
+                        var yeniSehirIcon2=dbWeather.findSelectedCityIcon(sehir)
+
+                        tvSicaklik.text=yeniSehirSicaklik2
+                        tvAciklama.text=yeniSehirAciklama2
+                        tvTarih.text=tarihYazdir()
+                        geceGunduzIcon(yeniSehirIcon2)
+                        Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
+
+
+                    }else{  // SEHİRDEN DB DE 2 VEYA DAHA FAZLA OLMASI DURUMU !!! İSTENMEYEN DURUM
+                        Log.e("OSMAN", "SEHİR DBYE 2 >= KAYDEDİLMİŞ")
+                        dbWeather.deleteSelectedCity(sehir)
+                        dbWeather.insertDataWH( // DB YE YENİ VERİLER EKLENDİ
+                            WeatherTablo(
+                                city = sehirAdi.toString(),
+                                temp = sicaklik.toString(),
+                                description = aciklama.toString(),
+                                date = tarihYazdir2(),
+                                icon = icon.toString()
+                            )
+                        )
+
+                        var yeniSehirSicaklik3=dbWeather.findSelectedCityTemp(sehir)
+                        var yeniSehirAciklama3=dbWeather.findSelectedCityDescription(sehir)
+                        var yeniSehirIcon3=dbWeather.findSelectedCityIcon(sehir)
+
+                        tvSicaklik.text=yeniSehirSicaklik3
+                        tvAciklama.text=yeniSehirAciklama3
+                        tvTarih.text=tarihYazdir()
+                        geceGunduzIcon(yeniSehirIcon3)
+                        Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
                     }
-
-
-
-
 
 
                 }
@@ -342,7 +396,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     // gece gunduz icon img yerleştir işi kısaltmak için fonksiyona aldım
     // belki daha sonra tekrar tekrar kullanırım kalabalık yapmasın
-    fun geceGunduzIcon(iconInner:String){
+    fun geceGunduzIcon(iconInner: String) {
         if (iconInner?.last() == 'd') {    // G Ü N D Ü Z
 
             tvSehir?.setTextColor(resources.getColor(R.color.colorPrimaryDark))

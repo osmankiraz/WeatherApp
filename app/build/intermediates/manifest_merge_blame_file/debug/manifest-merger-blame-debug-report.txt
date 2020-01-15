@@ -33,28 +33,29 @@
 21-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:12:9-61
 22        android:supportsRtl="true"
 22-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:13:9-35
-23        android:theme="@style/AppTheme" >
-23-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:14:9-40
-24        <activity android:name="com.example.havadurumuapp.CurrencyActivity" />
-24-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:15:9-63
-24-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:15:19-51
-25        <activity android:name="com.example.havadurumuapp.MainActivity" />
-25-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:16:9-50
-25-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:16:19-47
-26        <activity android:name="com.example.havadurumuapp.HomeActivity" >
-26-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:17:9-23:20
-26-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:17:19-47
-27            <intent-filter>
-27-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:18:13-22:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:19:17-69
-28-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:19:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:21:17-77
-30-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:21:27-74
-31            </intent-filter>
-32        </activity>
-33    </application>
-34
-35</manifest>
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme" >
+24-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:14:9-40
+25        <activity android:name="com.example.havadurumuapp.CurrencyActivity" />
+25-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:15:9-63
+25-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:15:19-51
+26        <activity android:name="com.example.havadurumuapp.MainActivity" />
+26-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:16:9-50
+26-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:16:19-47
+27        <activity android:name="com.example.havadurumuapp.HomeActivity" >
+27-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:17:9-23:20
+27-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:17:19-47
+28            <intent-filter>
+28-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:18:13-22:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:19:17-69
+29-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:19:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:21:17-77
+31-->C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:21:27-74
+32            </intent-filter>
+33        </activity>
+34    </application>
+35
+36</manifest>
