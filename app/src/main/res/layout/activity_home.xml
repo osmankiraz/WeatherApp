@@ -4,30 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:background="@color/colorPrimary2">
 
     <TextView
         android:id="@+id/tvCurrency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="260dp"
-        android:text="DÖVİZ"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="16dp"
+        android:text="Döviz"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgExchange"
+        app:layout_constraintStart_toStartOf="@+id/imgExchange"
+        app:layout_constraintTop_toBottomOf="@+id/imgExchange" />
 
     <TextView
         android:id="@+id/tvWeather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="107dp"
-        android:text="HAVA DURUMU"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvCurrency"
+        android:layout_marginTop="16dp"
+        android:text="Hava Durumu"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgSemsiye"
+        app:layout_constraintStart_toStartOf="@+id/imgSemsiye"
+        app:layout_constraintTop_toBottomOf="@+id/imgSemsiye" />
+
+    <ImageView
+        android:id="@+id/imgSemsiye"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@drawable/semsiyevektor" />
+
+    <ImageView
+        android:id="@+id/imgExchange"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="156dp"
+        android:tint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/tvWeather"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="@+id/tvWeather"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeather"
+        app:srcCompat="@drawable/ic_euro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

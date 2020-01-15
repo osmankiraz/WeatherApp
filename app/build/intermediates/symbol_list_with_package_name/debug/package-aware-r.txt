@@ -23,6 +23,8 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+anim doksanrotate
+anim downtoupinfinity
 array sehirler
 attr actionBarDivider
 attr actionBarItemBackground
@@ -403,6 +405,7 @@ color button_material_dark
 color button_material_light
 color colorAccent
 color colorPrimary
+color colorPrimary2
 color colorPrimaryDark
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
@@ -669,6 +672,7 @@ drawable dovizarkaplan
 drawable euro
 drawable gecearkaplan
 drawable gunarkaplan
+drawable ic_euro
 drawable ic_kafein_launcher_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -694,6 +698,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable semsiyevektor
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -798,7 +803,9 @@ id ifRoom
 id image
 id imgDolar
 id imgEuro
+id imgExchange
 id imgHavaDurumu
+id imgSemsiye
 id info
 id invisible
 id italic
