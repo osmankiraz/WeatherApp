@@ -4,6 +4,7 @@ ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:2:1-26:12
+MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\f4b01c689731f736ab9e25b8d9259e53\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.1.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\66b3e03ed3d24f845a7f4bd38e1b0b57\core-ktx-1.1.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\98c2f38aa180c2c7d7dec998f60f6aee\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
@@ -56,6 +57,8 @@ ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.
 		ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:6:22-76
 application
 ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:8:5-24:19
+MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\98c2f38aa180c2c7d7dec998f60f6aee\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\98c2f38aa180c2c7d7dec998f60f6aee\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\36e69b23683d0cfbdd2cafd90b642d85\searchablespinnerlibrary-1.3.1\AndroidManifest.xml:11:5-15:19
@@ -108,6 +111,8 @@ uses-sdk
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
+MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\f4b01c689731f736ab9e25b8d9259e53\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\f4b01c689731f736ab9e25b8d9259e53\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.1.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\66b3e03ed3d24f845a7f4bd38e1b0b57\core-ktx-1.1.0\AndroidManifest.xml:5:5-7:41

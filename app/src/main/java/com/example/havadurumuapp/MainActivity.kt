@@ -499,7 +499,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         if (iconInner?.last() == 'd') {    // G Ü N D Ü Z
 
             tvSehir?.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            rootLayout.background = getDrawable(R.drawable.buson)
+            rootLayout.background = getDrawable(R.drawable.dagvar)
             tvAciklama.setTextColor(resources.getColor(R.color.colorPrimaryDark))
             tvSicaklik.setTextColor(resources.getColor(R.color.colorPrimaryDark))
             tvTarih.setTextColor(resources.getColor(R.color.colorPrimaryDark))
@@ -527,8 +527,30 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             "icon_" + iconInner?.sonKarakteriSil(),
             "drawable",
             packageName
-        )//R.drawable.icon
+        )
         imgHavaDurumu.setImageResource(resimDosyaAdi)
+
+
+
+        var animDosyaAdi=resources.getIdentifier("anim"+iconInner?.sonKarakteriSil(),"raw",packageName)
+
+
+        if(animDosyaAdi == R.raw.anim04 ){
+            animationWeather.setAnimation(animDosyaAdi)
+            animationWeather.visibility=View.VISIBLE
+            animationWeather.reverseAnimationSpeed()
+            animationWeather.loop(true)
+            animationWeather.playAnimation()
+        }else{
+            animationWeather.setAnimation(animDosyaAdi)
+            animationWeather.visibility=View.VISIBLE
+            animationWeather.loop(true)
+            animationWeather.playAnimation()
+        }
+
+
+
+
 
     }
 

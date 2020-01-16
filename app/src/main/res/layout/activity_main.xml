@@ -5,19 +5,20 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/buson"
+    android:background="@drawable/dagvar"
     tools:context=".MainActivity">
+
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/spnSehirler"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvTarih"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toEndOf="@+id/tvTarih"
         app:layout_constraintTop_toTopOf="@+id/tvTarih" />
-
 
     <TextView
         android:id="@+id/tvTarih"
@@ -35,40 +36,59 @@
         android:id="@+id/tvSicaklik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="12dp"
         android:text="33"
         android:textSize="90sp"
-        app:layout_constraintStart_toStartOf="@+id/tvTarih"
-        app:layout_constraintTop_toBottomOf="@+id/tvTarih" />
+        app:layout_constraintEnd_toEndOf="@+id/imgHavaDurumu"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imgHavaDurumu"
+        app:layout_constraintTop_toBottomOf="@+id/imgHavaDurumu" />
 
     <TextView
         android:id="@+id/tvSantigrad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="°C"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSicaklik"
         app:layout_constraintStart_toEndOf="@+id/tvSicaklik"
-        app:layout_constraintTop_toTopOf="@+id/tvSicaklik" />
+        app:layout_constraintTop_toBottomOf="@+id/imgHavaDurumu"
+        app:layout_constraintVertical_bias="0.287" />
 
     <ImageView
         android:id="@+id/imgHavaDurumu"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvSicaklik"
-        app:layout_constraintEnd_toEndOf="@+id/spnSehirler"
-        app:layout_constraintTop_toTopOf="@+id/tvSicaklik"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvAciklama"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/tvAciklama"
+        app:layout_constraintTop_toBottomOf="@+id/tvAciklama"
         app:srcCompat="@drawable/icon_01" />
 
     <TextView
         android:id="@+id/tvAciklama"
-        android:layout_width="175dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:text="GUNESLI"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSicaklik" />
+        app:layout_constraintTop_toBottomOf="@+id/spnSehirler" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationWeather"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/tvSicaklik"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/tvSicaklik"
+        app:layout_constraintTop_toBottomOf="@+id/tvSicaklik"
+        app:lottie_rawRes="@raw/anim04"
+        app:lottie_repeatCount="1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
