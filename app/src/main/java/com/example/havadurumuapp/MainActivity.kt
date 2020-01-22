@@ -16,12 +16,17 @@ import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.VolleyError
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import im.delight.android.location.SimpleLocation
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONArray
 import org.json.JSONObject
+import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
+import java.time.temporal.TemporalAccessor
 import java.util.*
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -31,12 +36,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var location: SimpleLocation? = null
     var latitude: String? = null
     var longitude: String? = null
+    var tersEdildiMi:Boolean=false
+    lateinit var locationKey:String
+
+
     val dbWeather by lazy { DBWeatherHelper(this) }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
 
 
     }
+
+
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         tvSehir = view as TextView
@@ -73,18 +84,26 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             var secilenSehir = parent?.getItemAtPosition(position).toString()
             tvSehir = view as TextView
             verileriGetir(secilenSehir)
+            fetchingLocationKey(secilenSehir)
+
         }
-
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+        // İTEM POSİTİON 0 A KOYA BİLİRSİN BELKİ BUNU
+        // ACILIR BİR PENCERE CIKICAK ORADAKİ EDİTTEXTE GİRİLEN ŞEHİR VERİGETİR'E PARAMETRE OLARAK GELECEK AMA
+        // O VERİYİ STRİNG.XMLE KAYDEDEMİYORUM TEKRARDAN RESOURCES İÇİNE KAYDEDİLMİYORMUŞ ONLY READ OLD. ICIN
+
+
         var spinnerAdapter =
             ArrayAdapter.createFromResource(this, R.array.sehirler, R.layout.spinner_tek_satir)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
 
         // ARROW COLOR CHANGE
         spnSehirler.getBackground().setColorFilter(
@@ -92,15 +111,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             PorterDuff.Mode.SRC_ATOP
         )
 
+
+
         spnSehirler.adapter = spinnerAdapter
         spnSehirler.setTitle("Şehir Seçiniz")
-        spnSehirler.setPositiveButton("KAPAT")
         spnSehirler.onItemSelectedListener =
             this // SPİNNERDAN BİŞEY SEÇİLDİĞİNDE BİR HAREKET OLMASI İÇİN BUNU YAZMAK ZORUNDAYIZ
 
-        spnSehirler.setSelection(1)
 
-        //verileriGetir("istanbul")
+        spnSehirler.setSelection(1)
+        Log.e("OSMAN","MAİN İÇİ ->")
+
+
+        //spinnerAdapter.add("Value")
+        //spinnerAdapter.notifyDataSetChanged()
+
 
 
     }
@@ -110,8 +135,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         var sehirAdi: String? = null
 
         val sehirUrl =
-            "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=b10a542e4c2b6323b9da3b7910cd2d0d&lang=tr&units=metric"
-        //val ankaraUrl ="https://api.openweathermap.org/data/2.5/weather?lat=35.65&lon=139.83&appid=b10a542e4c2b6323b9da3b7910cd2d0d&lang=tr&units=metric"
+            "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + longt + "&appid=e57955a0fa8d61bebd89532dd21f4c15&lang=tr&units=metric"
         val havaDurumuObje2 = JsonObjectRequest(
             Request.Method.GET,
             sehirUrl,
@@ -294,8 +318,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 spnSehirler.setSelection(1)
                 Toast.makeText(this, "GPS verisini açmalısın", Toast.LENGTH_LONG).show()
             }
-
-
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
@@ -303,8 +325,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     // Ş E H İ R    V E R İ L E R İ N İ     G E T İ R E N   F O N K S İ Y O N
     fun verileriGetir(sehir: String) {
 
+
         val ankaraUrl =
-            "https://api.openweathermap.org/data/2.5/weather?q=" + sehir + "&appid=b10a542e4c2b6323b9da3b7910cd2d0d&lang=tr&units=metric"
+            "https://api.openweathermap.org/data/2.5/weather?q=" + sehir + "&appid=e57955a0fa8d61bebd89532dd21f4c15&lang=tr&units=metric"
         val havaDurumuObje = JsonObjectRequest(
             Request.Method.GET,
             ankaraUrl,
@@ -314,21 +337,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     var main = response?.getJSONObject("main")
                     var sicaklik = main?.getInt("temp")
                     var sehirAdi = response?.getString("name")
-                    //tvSehir.text=sehirAdi
+
                     var weather = response?.getJSONArray("weather")
                     var aciklama = weather?.getJSONObject(0)?.getString("description")
                     var icon = weather?.getJSONObject(0)?.getString("icon")
 
-                    //dbWeather.insertDataWH(WeatherTablo(city=sehir,temp =sicaklik.toString(),description = aciklama.toString(),date ="14-01-2020",icon = "icon_09"))
-                    //dbWeather.insertDataWH(WeatherTablo(city="Ankara",temp ="36",description = "insan",date ="14-01-2020",icon = "icon_10"))
-
-
-                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     //dbWeather.deleteAllData()
                     var sehirVarmi: Boolean
                     sehirVarmi = dbWeather.isEmptyTable()
                     Log.e("OSMAN", "TABLO BOŞ İSE TRU GELECEK? ? = " + sehirVarmi)
-                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
                     var kacTaneSehir = 0
                     kacTaneSehir = dbWeather.kacTane(sehir)
@@ -382,7 +400,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
                             dbWeather.insertDataWH( // DB YE YENİ VERİLER EKLENDİ
                                 WeatherTablo(
-                                    city = sehirAdi.toString(),
+                                    city = sehir,
                                     temp = sicaklik.toString(),
                                     description = aciklama.toString(),
                                     date = tarihYazdir2(),
@@ -409,7 +427,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                         Log.e("OSMAN", "SEÇİLEN ŞEHİR DB DE HİÇ ÇIKMADI")
                         dbWeather.insertDataWH(
                             WeatherTablo(
-                                city = sehirAdi.toString(),
+                                city = sehir,
                                 temp = sicaklik.toString(),
                                 description = aciklama.toString(),
                                 date = tarihYazdir2(),
@@ -433,7 +451,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                         dbWeather.deleteSelectedCity(sehir)
                         dbWeather.insertDataWH( // DB YE YENİ VERİLER EKLENDİ
                             WeatherTablo(
-                                city = sehirAdi.toString(),
+                                city = sehir,
                                 temp = sicaklik.toString(),
                                 description = aciklama.toString(),
                                 date = tarihYazdir2(),
@@ -458,12 +476,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
             },
             object : Response.ErrorListener {
-                override fun onErrorResponse(error: VolleyError?) {
-
-                }
+                override fun onErrorResponse(error: VolleyError?) {}
 
             })
-
 
         MySingleton.getInstance(this).addToRequestQueue(havaDurumuObje)
 
@@ -493,13 +508,36 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
+    fun tarihYazdirGunAdi(jsonTarih:String):String{
+        var gelenZaman: String =jsonTarih
+
+        var result:ZonedDateTime= ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
+
+        val formatter = DateTimeFormatter.ofPattern("EEEE ", Locale("tr"))
+        var formattedTime=result.format(formatter)
+        return formattedTime
+
+    }
+    fun tarihYazdirAyGun(jsonTarih:String):String{
+        var gelenZaman: String =jsonTarih
+
+        var result:ZonedDateTime= ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
+
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM", Locale("tr"))
+        var formattedTime=result.format(formatter)
+
+        return formattedTime
+
+    }
+
     // gece gunduz icon img yerleştir işi kısaltmak için fonksiyona aldım
     // belki daha sonra tekrar tekrar kullanırım kalabalık yapmasın
     fun geceGunduzIcon(iconInner: String) {
         if (iconInner?.last() == 'd') {    // G Ü N D Ü Z
 
             tvSehir?.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            rootLayout.background = getDrawable(R.drawable.dagvar)
+            collapsingToolbar.background=getDrawable(R.drawable.dagvar)
+
             tvAciklama.setTextColor(resources.getColor(R.color.colorPrimaryDark))
             tvSicaklik.setTextColor(resources.getColor(R.color.colorPrimaryDark))
             tvTarih.setTextColor(resources.getColor(R.color.colorPrimaryDark))
@@ -511,7 +549,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         } else {  //  G E C E
             tvSehir?.setTextColor(resources.getColor(R.color.snowBir))
-            rootLayout.background = getDrawable(R.drawable.gecearkaplan)
+
+            collapsingToolbar.background=getDrawable(R.drawable.gecearkaplan)
+
             tvAciklama.setTextColor(resources.getColor(R.color.snowBir))
             tvSicaklik.setTextColor(resources.getColor(R.color.snowBir))
             tvTarih.setTextColor(resources.getColor(R.color.snowBir))
@@ -528,31 +568,79 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             "drawable",
             packageName
         )
-        imgHavaDurumu.setImageResource(resimDosyaAdi)
-
-
+        //imgHavaDurumu.setImageResource(resimDosyaAdi)
 
         var animDosyaAdi=resources.getIdentifier("anim"+iconInner?.sonKarakteriSil(),"raw",packageName)
 
-
         if(animDosyaAdi == R.raw.anim04 ){
+            tersEdildiMi=true
             animationWeather.setAnimation(animDosyaAdi)
             animationWeather.visibility=View.VISIBLE
             animationWeather.reverseAnimationSpeed()
             animationWeather.loop(true)
             animationWeather.playAnimation()
+        }else if ( (animDosyaAdi != R.raw.anim04) && (tersEdildiMi == true)){
+            Log.e("BOOLEAN","ELse if DEGER = "+tersEdildiMi)
+            animationWeather.setAnimation(animDosyaAdi)
+            animationWeather.reverseAnimationSpeed()
+            animationWeather.visibility=View.VISIBLE
+            animationWeather.loop(true)
+            animationWeather.playAnimation()
         }else{
+            Log.e("BOOLEAN"," Else DEGER = "+tersEdildiMi)
             animationWeather.setAnimation(animDosyaAdi)
             animationWeather.visibility=View.VISIBLE
             animationWeather.loop(true)
             animationWeather.playAnimation()
         }
+    }
+
+    fun fetchingLocationKey(sehirAdiLocKey:String){
+
+
+        val locationKeyUrl="https://dataservice.accuweather.com/locations/v1/cities/search?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&q="+sehirAdiLocKey+"&language=tr&details=false"
+        var request=JsonArrayRequest(locationKeyUrl,object:Response.Listener<JSONArray>{
+            override fun onResponse(response: JSONArray?) {
+
+                var jsonobjectDeneme=response?.getJSONObject(0)
+                locationKey=jsonobjectDeneme!!.getString("Key")
+                Log.e("OSMAN",sehirAdiLocKey+"Şehrinin location keyi bu mu ? = "+locationKey)
+
+//////////////////////////
+                var keyliUrl="https://dataservice.accuweather.com/forecasts/v1/daily/5day/"+locationKey+"?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&language=tr&details=false&metric=true"
+                var request2=JsonObjectRequest(Request.Method.GET,keyliUrl,null,object:Response.Listener<JSONObject>{
+                    override fun onResponse(response: JSONObject?) {
+                        var icdekiJson=response?.getJSONArray("DailyForecasts")
+                        var dateDeneme=icdekiJson?.getJSONObject(0)?.getString("Date")
+                        Log.e("OSMAN","Deneme içteki json DATE ==== "+dateDeneme)
+                        var dayName=tarihYazdirGunAdi(dateDeneme!!)
+                        var mounthNumberDay=tarihYazdirAyGun(dateDeneme!!)
+                        Log.e("OSMAN","Deneme içteki json DATE Gun Adi ==== "+dayName)
+                        Log.e("OSMAN","Deneme içteki json DATE GunSayisi ve AY ==== "+mounthNumberDay)
+                    }
+                },object:Response.ErrorListener{
+                    override fun onErrorResponse(error: VolleyError?) {}
+                })
+                MySingleton.getInstance(this@MainActivity).addToRequestQueue(request2)
+
+
+                /////////////////////////
 
 
 
+            }
+        },object :Response.ErrorListener{
+            override fun onErrorResponse(error: VolleyError?) {
+                Log.e("OSMAN","Errorra girdi"+error)
+            }
+        })
+        MySingleton.getInstance(this).addToRequestQueue(request)
 
 
     }
+
+
+
 
 }
 

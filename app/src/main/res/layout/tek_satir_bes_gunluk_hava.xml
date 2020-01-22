@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtSayiTarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22 Ocak"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtGunTarih"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perşembe"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgBesgunIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="70dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/icon_01"/>
+
+    <TextView
+        android:id="@+id/txtBesGunduzSicaklik"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:text="10"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center_vertical"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°C"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical" />
+    <TextView
+        android:id="@+id/txtBesGeceSicaklik"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:text="10"
+        android:textSize="40sp"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center_vertical"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°C"
+        android:textSize="20sp"
+        android:layout_gravity="center_vertical" />
+
+
+</LinearLayout>
