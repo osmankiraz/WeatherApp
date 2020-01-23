@@ -13,21 +13,24 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
+import com.example.havadurumuapp.Adapter.RecyclerViewAdapter
+import com.example.havadurumuapp.Model.besGunHava
 import im.delight.android.location.SimpleLocation
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
-import java.time.temporal.TemporalAccessor
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
@@ -36,8 +39,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var location: SimpleLocation? = null
     var latitude: String? = null
     var longitude: String? = null
-    var tersEdildiMi:Boolean=false
-    lateinit var locationKey:String
+    var tersEdildiMi: Boolean = false
+    lateinit var locationKey: String
+    lateinit var listHavaArray:ArrayList<besGunHava>
 
 
     val dbWeather by lazy { DBWeatherHelper(this) }
@@ -46,7 +50,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
     }
-
 
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -93,6 +96,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        listHavaArray=ArrayList<besGunHava>()
 
 
         // İTEM POSİTİON 0 A KOYA BİLİRSİN BELKİ BUNU
@@ -120,12 +124,11 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
         spnSehirler.setSelection(1)
-        Log.e("OSMAN","MAİN İÇİ ->")
+        Log.e("OSMAN", "MAİN İÇİ ->")
 
 
         //spinnerAdapter.add("Value")
         //spinnerAdapter.notifyDataSetChanged()
-
 
 
     }
@@ -166,7 +169,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
                     var kacTaneSehir = 0
                     kacTaneSehir = dbWeather.kacTane(sehirAdi!!)
-                    Log.e("OSMAN", sehirAdi+" ŞEHRİNDEN  DB'DE KAÇ TANE VAR ? = " + kacTaneSehir)
+                    Log.e("OSMAN", sehirAdi + " ŞEHRİNDEN  DB'DE KAÇ TANE VAR ? = " + kacTaneSehir)
 
                     var strCityName = ""
                     strCityName = dbWeather.findSelectedCity(sehirAdi!!)
@@ -224,15 +227,17 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                                     icon = icon.toString()
                                 )
                             )
-                            var yeniSehirAdi=dbWeather.findSelectedCity(sehirAdi.toString())
-                            var yeniSehirSicaklik=dbWeather.findSelectedCityTemp(sehirAdi.toString())
-                            var yeniSehirAciklama=dbWeather.findSelectedCityDescription(sehirAdi.toString())
-                            var yeniSehirIcon=dbWeather.findSelectedCityIcon(sehirAdi.toString())
+                            var yeniSehirAdi = dbWeather.findSelectedCity(sehirAdi.toString())
+                            var yeniSehirSicaklik =
+                                dbWeather.findSelectedCityTemp(sehirAdi.toString())
+                            var yeniSehirAciklama =
+                                dbWeather.findSelectedCityDescription(sehirAdi.toString())
+                            var yeniSehirIcon = dbWeather.findSelectedCityIcon(sehirAdi.toString())
 
                             tvSehir?.setText(yeniSehirAdi)
-                            tvSicaklik.text=yeniSehirSicaklik
-                            tvAciklama.text=yeniSehirAciklama
-                            tvTarih.text=tarihYazdir()
+                            tvSicaklik.text = yeniSehirSicaklik
+                            tvAciklama.text = yeniSehirAciklama
+                            tvTarih.text = tarihYazdir()
                             geceGunduzIcon(yeniSehirIcon)
                             Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
@@ -253,20 +258,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             )
                         )//tabloya eklenecek
 
-                        var yeniSehirAdi2=dbWeather.findSelectedCity(sehirAdi.toString())
-                        var yeniSehirSicaklik2=dbWeather.findSelectedCityTemp(sehirAdi.toString())
-                        var yeniSehirAciklama2=dbWeather.findSelectedCityDescription(sehirAdi.toString())
-                        var yeniSehirIcon2=dbWeather.findSelectedCityIcon(sehirAdi.toString())
+                        var yeniSehirAdi2 = dbWeather.findSelectedCity(sehirAdi.toString())
+                        var yeniSehirSicaklik2 = dbWeather.findSelectedCityTemp(sehirAdi.toString())
+                        var yeniSehirAciklama2 =
+                            dbWeather.findSelectedCityDescription(sehirAdi.toString())
+                        var yeniSehirIcon2 = dbWeather.findSelectedCityIcon(sehirAdi.toString())
 
                         tvSehir?.setText(yeniSehirAdi2)
-                        tvSicaklik.text=yeniSehirSicaklik2
-                        tvAciklama.text=yeniSehirAciklama2
-                        tvTarih.text=tarihYazdir()
+                        tvSicaklik.text = yeniSehirSicaklik2
+                        tvAciklama.text = yeniSehirAciklama2
+                        tvTarih.text = tarihYazdir()
                         geceGunduzIcon(yeniSehirIcon2)
                         Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
 
-                    }else{  // SEHİRDEN DB DE 2 VEYA DAHA FAZLA OLMASI DURUMU !!! İSTENMEYEN DURUM
+                    } else {  // SEHİRDEN DB DE 2 VEYA DAHA FAZLA OLMASI DURUMU !!! İSTENMEYEN DURUM
                         Log.e("OSMAN", "SEHİR DBYE 2 >= KAYDEDİLMİŞ")
                         dbWeather.deleteSelectedCity(sehirAdi.toString())
                         dbWeather.insertDataWH( // DB YE YENİ VERİLER EKLENDİ
@@ -278,20 +284,20 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                                 icon = icon.toString()
                             )
                         )
-                        var yeniSehirAdi3=dbWeather.findSelectedCity(sehirAdi.toString())
-                        var yeniSehirSicaklik3=dbWeather.findSelectedCityTemp(sehirAdi.toString())
-                        var yeniSehirAciklama3=dbWeather.findSelectedCityDescription(sehirAdi.toString())
-                        var yeniSehirIcon3=dbWeather.findSelectedCityIcon(sehirAdi.toString())
+                        var yeniSehirAdi3 = dbWeather.findSelectedCity(sehirAdi.toString())
+                        var yeniSehirSicaklik3 = dbWeather.findSelectedCityTemp(sehirAdi.toString())
+                        var yeniSehirAciklama3 =
+                            dbWeather.findSelectedCityDescription(sehirAdi.toString())
+                        var yeniSehirIcon3 = dbWeather.findSelectedCityIcon(sehirAdi.toString())
 
                         tvSehir?.setText(yeniSehirAdi3)
-                        tvSicaklik.text=yeniSehirSicaklik3
-                        tvAciklama.text=yeniSehirAciklama3
-                        tvTarih.text=tarihYazdir()
+                        tvSicaklik.text = yeniSehirSicaklik3
+                        tvAciklama.text = yeniSehirAciklama3
+                        tvTarih.text = tarihYazdir()
                         geceGunduzIcon(yeniSehirIcon3)
                         Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
                     }
-
 
 
                 }
@@ -350,7 +356,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
                     var kacTaneSehir = 0
                     kacTaneSehir = dbWeather.kacTane(sehir)
-                    Log.e("OSMAN", sehir+" ŞEHRİNDEN  DB'DE KAÇ TANE VAR ? = " + kacTaneSehir)
+                    Log.e("OSMAN", sehir + " ŞEHRİNDEN  DB'DE KAÇ TANE VAR ? = " + kacTaneSehir)
 
                     var strCityName = ""
                     strCityName = dbWeather.findSelectedCity(sehir)
@@ -408,13 +414,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                                 )
                             )
 
-                            var yeniSehirSicaklik=dbWeather.findSelectedCityTemp(sehir)
-                            var yeniSehirAciklama=dbWeather.findSelectedCityDescription(sehir)
-                            var yeniSehirIcon=dbWeather.findSelectedCityIcon(sehir)
+                            var yeniSehirSicaklik = dbWeather.findSelectedCityTemp(sehir)
+                            var yeniSehirAciklama = dbWeather.findSelectedCityDescription(sehir)
+                            var yeniSehirIcon = dbWeather.findSelectedCityIcon(sehir)
 
-                            tvSicaklik.text=yeniSehirSicaklik
-                            tvAciklama.text=yeniSehirAciklama
-                            tvTarih.text=tarihYazdir()
+                            tvSicaklik.text = yeniSehirSicaklik
+                            tvAciklama.text = yeniSehirAciklama
+                            tvTarih.text = tarihYazdir()
                             geceGunduzIcon(yeniSehirIcon)
                             Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
@@ -435,18 +441,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             )
                         )//tabloya eklenecek
 
-                        var yeniSehirSicaklik2=dbWeather.findSelectedCityTemp(sehir)
-                        var yeniSehirAciklama2=dbWeather.findSelectedCityDescription(sehir)
-                        var yeniSehirIcon2=dbWeather.findSelectedCityIcon(sehir)
+                        var yeniSehirSicaklik2 = dbWeather.findSelectedCityTemp(sehir)
+                        var yeniSehirAciklama2 = dbWeather.findSelectedCityDescription(sehir)
+                        var yeniSehirIcon2 = dbWeather.findSelectedCityIcon(sehir)
 
-                        tvSicaklik.text=yeniSehirSicaklik2
-                        tvAciklama.text=yeniSehirAciklama2
-                        tvTarih.text=tarihYazdir()
+                        tvSicaklik.text = yeniSehirSicaklik2
+                        tvAciklama.text = yeniSehirAciklama2
+                        tvTarih.text = tarihYazdir()
                         geceGunduzIcon(yeniSehirIcon2)
                         Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
 
-                    }else{  // SEHİRDEN DB DE 2 VEYA DAHA FAZLA OLMASI DURUMU !!! İSTENMEYEN DURUM
+                    } else {  // SEHİRDEN DB DE 2 VEYA DAHA FAZLA OLMASI DURUMU !!! İSTENMEYEN DURUM
                         Log.e("OSMAN", "SEHİR DBYE 2 >= KAYDEDİLMİŞ")
                         dbWeather.deleteSelectedCity(sehir)
                         dbWeather.insertDataWH( // DB YE YENİ VERİLER EKLENDİ
@@ -459,13 +465,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             )
                         )
 
-                        var yeniSehirSicaklik3=dbWeather.findSelectedCityTemp(sehir)
-                        var yeniSehirAciklama3=dbWeather.findSelectedCityDescription(sehir)
-                        var yeniSehirIcon3=dbWeather.findSelectedCityIcon(sehir)
+                        var yeniSehirSicaklik3 = dbWeather.findSelectedCityTemp(sehir)
+                        var yeniSehirAciklama3 = dbWeather.findSelectedCityDescription(sehir)
+                        var yeniSehirIcon3 = dbWeather.findSelectedCityIcon(sehir)
 
-                        tvSicaklik.text=yeniSehirSicaklik3
-                        tvAciklama.text=yeniSehirAciklama3
-                        tvTarih.text=tarihYazdir()
+                        tvSicaklik.text = yeniSehirSicaklik3
+                        tvAciklama.text = yeniSehirAciklama3
+                        tvTarih.text = tarihYazdir()
                         geceGunduzIcon(yeniSehirIcon3)
                         Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
 
@@ -508,23 +514,24 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
-    fun tarihYazdirGunAdi(jsonTarih:String):String{
-        var gelenZaman: String =jsonTarih
+    fun tarihYazdirGunAdi(jsonTarih: String): String {
+        var gelenZaman: String = jsonTarih
 
-        var result:ZonedDateTime= ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
+        var result: ZonedDateTime = ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
 
         val formatter = DateTimeFormatter.ofPattern("EEEE ", Locale("tr"))
-        var formattedTime=result.format(formatter)
+        var formattedTime = result.format(formatter)
         return formattedTime
 
     }
-    fun tarihYazdirAyGun(jsonTarih:String):String{
-        var gelenZaman: String =jsonTarih
 
-        var result:ZonedDateTime= ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
+    fun tarihYazdirAyGun(jsonTarih: String): String {
+        var gelenZaman: String = jsonTarih
+
+        var result: ZonedDateTime = ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
 
         val formatter = DateTimeFormatter.ofPattern("dd MMMM", Locale("tr"))
-        var formattedTime=result.format(formatter)
+        var formattedTime = result.format(formatter)
 
         return formattedTime
 
@@ -536,7 +543,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         if (iconInner?.last() == 'd') {    // G Ü N D Ü Z
 
             tvSehir?.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            collapsingToolbar.background=getDrawable(R.drawable.dagvar)
+            collapsingToolbar.background = getDrawable(R.drawable.dagvar)
 
             tvAciklama.setTextColor(resources.getColor(R.color.colorPrimaryDark))
             tvSicaklik.setTextColor(resources.getColor(R.color.colorPrimaryDark))
@@ -550,7 +557,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         } else {  //  G E C E
             tvSehir?.setTextColor(resources.getColor(R.color.snowBir))
 
-            collapsingToolbar.background=getDrawable(R.drawable.gecearkaplan)
+            collapsingToolbar.background = getDrawable(R.drawable.gecearkaplan)
 
             tvAciklama.setTextColor(resources.getColor(R.color.snowBir))
             tvSicaklik.setTextColor(resources.getColor(R.color.snowBir))
@@ -570,68 +577,105 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         )
         //imgHavaDurumu.setImageResource(resimDosyaAdi)
 
-        var animDosyaAdi=resources.getIdentifier("anim"+iconInner?.sonKarakteriSil(),"raw",packageName)
+        var animDosyaAdi =
+            resources.getIdentifier("anim" + iconInner?.sonKarakteriSil(), "raw", packageName)
 
-        if(animDosyaAdi == R.raw.anim04 ){
-            tersEdildiMi=true
+        if (animDosyaAdi == R.raw.anim04) {
+            tersEdildiMi = true
             animationWeather.setAnimation(animDosyaAdi)
-            animationWeather.visibility=View.VISIBLE
+            animationWeather.visibility = View.VISIBLE
             animationWeather.reverseAnimationSpeed()
             animationWeather.loop(true)
             animationWeather.playAnimation()
-        }else if ( (animDosyaAdi != R.raw.anim04) && (tersEdildiMi == true)){
-            Log.e("BOOLEAN","ELse if DEGER = "+tersEdildiMi)
+        } else if ((animDosyaAdi != R.raw.anim04) && (tersEdildiMi == true)) {
+            Log.e("BOOLEAN", "ELse if DEGER = " + tersEdildiMi)
             animationWeather.setAnimation(animDosyaAdi)
             animationWeather.reverseAnimationSpeed()
-            animationWeather.visibility=View.VISIBLE
+            animationWeather.visibility = View.VISIBLE
             animationWeather.loop(true)
             animationWeather.playAnimation()
-        }else{
-            Log.e("BOOLEAN"," Else DEGER = "+tersEdildiMi)
+        } else {
+            Log.e("BOOLEAN", " Else DEGER = " + tersEdildiMi)
             animationWeather.setAnimation(animDosyaAdi)
-            animationWeather.visibility=View.VISIBLE
+            animationWeather.visibility = View.VISIBLE
             animationWeather.loop(true)
             animationWeather.playAnimation()
         }
     }
 
-    fun fetchingLocationKey(sehirAdiLocKey:String){
+    fun fetchingLocationKey(sehirAdiLocKey: String) {
 
-
-        val locationKeyUrl="https://dataservice.accuweather.com/locations/v1/cities/search?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&q="+sehirAdiLocKey+"&language=tr&details=false"
-        var request=JsonArrayRequest(locationKeyUrl,object:Response.Listener<JSONArray>{
+        listHavaArray.clear()
+        val locationKeyUrl =
+            "https://dataservice.accuweather.com/locations/v1/cities/search?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&q=" + sehirAdiLocKey + "&language=tr&details=false"
+        var request = JsonArrayRequest(locationKeyUrl, object : Response.Listener<JSONArray> {
             override fun onResponse(response: JSONArray?) {
 
-                var jsonobjectDeneme=response?.getJSONObject(0)
-                locationKey=jsonobjectDeneme!!.getString("Key")
-                Log.e("OSMAN",sehirAdiLocKey+"Şehrinin location keyi bu mu ? = "+locationKey)
+                var jsonobjectDeneme = response?.getJSONObject(0)
+                locationKey = jsonobjectDeneme!!.getString("Key")
+                Log.e("OSMAN", sehirAdiLocKey + "Şehrinin location keyi bu mu ? = " + locationKey)
 
 //////////////////////////
-                var keyliUrl="https://dataservice.accuweather.com/forecasts/v1/daily/5day/"+locationKey+"?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&language=tr&details=false&metric=true"
-                var request2=JsonObjectRequest(Request.Method.GET,keyliUrl,null,object:Response.Listener<JSONObject>{
-                    override fun onResponse(response: JSONObject?) {
-                        var icdekiJson=response?.getJSONArray("DailyForecasts")
-                        var dateDeneme=icdekiJson?.getJSONObject(0)?.getString("Date")
-                        Log.e("OSMAN","Deneme içteki json DATE ==== "+dateDeneme)
-                        var dayName=tarihYazdirGunAdi(dateDeneme!!)
-                        var mounthNumberDay=tarihYazdirAyGun(dateDeneme!!)
-                        Log.e("OSMAN","Deneme içteki json DATE Gun Adi ==== "+dayName)
-                        Log.e("OSMAN","Deneme içteki json DATE GunSayisi ve AY ==== "+mounthNumberDay)
-                    }
-                },object:Response.ErrorListener{
-                    override fun onErrorResponse(error: VolleyError?) {}
-                })
+                var keyliUrl =
+                    "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + locationKey + "?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&language=tr&details=false&metric=true"
+                var request2 = JsonObjectRequest(
+                    Request.Method.GET,
+                    keyliUrl,
+                    null,
+                    object : Response.Listener<JSONObject> {
+                        override fun onResponse(response: JSONObject?) {
+
+
+                            for(i in 0..4){
+                                var dailyForecast = response?.getJSONArray("DailyForecasts")
+                                Log.e("OSMAN","response uzunluğu for içi: "+ response!!.length())
+                                try {
+                                    var dateDeneme = dailyForecast?.getJSONObject(i)?.getString("Date")
+                                    var dayName = tarihYazdirGunAdi(dateDeneme!!)
+                                    var mounthNumberDay = tarihYazdirAyGun(dateDeneme!!)
+                                    var minimumTemp =
+                                        dailyForecast?.getJSONObject(i)?.getJSONObject("Temperature")
+                                            ?.getJSONObject("Minimum")?.getDouble("Value")
+                                    var maximumTemp =
+                                        dailyForecast?.getJSONObject(i)?.getJSONObject("Temperature")
+                                            ?.getJSONObject("Maximum")?.getDouble("Value")
+                                    var accuIcon = dailyForecast?.getJSONObject(i)?.getJSONObject("Day")
+                                        ?.getInt("Icon")
+
+                                    var iconNameFormatter=resources.getIdentifier("aicon"+accuIcon,"drawable",packageName)
+
+                                    var besGunHavaDeger=besGunHava()
+                                    besGunHavaDeger.gunAdi=dayName
+                                    besGunHavaDeger.gunAyNumber=mounthNumberDay
+                                    besGunHavaDeger.minimumTemp=minimumTemp!!.toInt()
+                                    besGunHavaDeger.maximumTemp=maximumTemp!!.toInt()
+                                    besGunHavaDeger.accuIcon=iconNameFormatter
+                                    listHavaArray.add(besGunHavaDeger)
+
+                                }catch (e:JSONException){
+                                    Log.e("OSMAN","try catch hata vardi : "+ e.printStackTrace() )
+                                }
+                                setupRecyclerView(listHavaArray)
+
+                            }
+
+
+
+                        }
+                    },
+                    object : Response.ErrorListener {
+                        override fun onErrorResponse(error: VolleyError?) {}
+                    })
                 MySingleton.getInstance(this@MainActivity).addToRequestQueue(request2)
 
 
-                /////////////////////////
-
+ /////////////////////////
 
 
             }
-        },object :Response.ErrorListener{
+        }, object : Response.ErrorListener {
             override fun onErrorResponse(error: VolleyError?) {
-                Log.e("OSMAN","Errorra girdi"+error)
+                Log.e("OSMAN", "Errorra girdi" + error)
             }
         })
         MySingleton.getInstance(this).addToRequestQueue(request)
@@ -640,6 +684,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
 
+    fun setupRecyclerView(listHava: ArrayList<besGunHava>?) {
+        var myAdapter = RecyclerViewAdapter(this, listHava!!)
+        recyclerViewBes.layoutManager=LinearLayoutManager(this)
+        recyclerViewBes.adapter=myAdapter
+
+    }
 
 
 }

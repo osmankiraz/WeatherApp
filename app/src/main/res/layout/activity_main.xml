@@ -10,159 +10,129 @@
     tools:context=".MainActivity">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ikinciLayout"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/coordinatorLayout"
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="500dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            android:fitsSystemWindows="false">
 
-
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/appBarLayout"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:fitsSystemWindows="false">
+                android:layout_height="match_parent"
+                android:background="@color/snowBir"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <com.google.android.material.appbar.CollapsingToolbarLayout
-                    android:id="@+id/collapsingToolbar"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/havaRoot"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/snowBir"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                    android:background="@drawable/dagvar">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/havaRoot"
-                        android:background="@drawable/dagvar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/spnSehirler"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="84dp"
+                        android:padding="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvTarih"
+                        app:layout_constraintStart_toEndOf="@+id/tvTarih"
+                        app:layout_constraintTop_toTopOf="@+id/tvTarih" />
 
-                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                            android:id="@+id/spnSehirler"
-                            android:layout_width="200dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="84dp"
-                            android:padding="5dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tvTarih"
-                            app:layout_constraintStart_toEndOf="@+id/tvTarih"
-                            app:layout_constraintTop_toTopOf="@+id/tvTarih" />
+                    <TextView
+                        android:id="@+id/tvTarih"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="36dp"
+                        android:text="TARIH"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/tvTarih"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="28dp"
-                            android:layout_marginTop="36dp"
-                            android:text="TARIH"
-                            android:textSize="24sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/tvSicaklik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="33"
+                        android:textSize="90sp"
+                        app:layout_constraintEnd_toEndOf="@+id/animationWeather"
+                        app:layout_constraintStart_toStartOf="@+id/animationWeather"
+                        app:layout_constraintTop_toBottomOf="@+id/animationWeather" />
 
-                        <TextView
-                            android:id="@+id/tvSicaklik"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="33"
-                            android:textSize="90sp"
-                            app:layout_constraintEnd_toEndOf="@+id/animationWeather"
-                            app:layout_constraintStart_toStartOf="@+id/animationWeather"
-                            app:layout_constraintTop_toBottomOf="@+id/animationWeather" />
+                    <TextView
+                        android:id="@+id/tvSantigrad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="°C"
+                        android:textSize="30sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvSicaklik"
+                        app:layout_constraintStart_toEndOf="@+id/tvSicaklik"
+                        app:layout_constraintTop_toBottomOf="@+id/animationWeather"
+                        app:layout_constraintVertical_bias="0.312" />
 
-                        <TextView
-                            android:id="@+id/tvSantigrad"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="°C"
-                            android:textSize="30sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tvSicaklik"
-                            app:layout_constraintStart_toEndOf="@+id/tvSicaklik"
-                            app:layout_constraintTop_toBottomOf="@+id/animationWeather"
-                            app:layout_constraintVertical_bias="0.312" />
+                    <TextView
+                        android:id="@+id/tvAciklama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="GUNESLI"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/spnSehirler" />
 
-                        <TextView
-                            android:id="@+id/tvAciklama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="GUNESLI"
-                            android:textSize="36sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.498"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/spnSehirler" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/animationWeather"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:visibility="invisible"
-                            app:layout_constraintEnd_toEndOf="@+id/tvAciklama"
-                            app:layout_constraintStart_toStartOf="@+id/tvAciklama"
-                            app:layout_constraintTop_toBottomOf="@+id/tvAciklama"
-                            app:lottie_rawRes="@raw/anim04"
-                            app:lottie_repeatCount="1" />
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animationWeather"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="@+id/tvAciklama"
+                        app:layout_constraintStart_toStartOf="@+id/tvAciklama"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAciklama"
+                        app:lottie_rawRes="@raw/anim04"
+                        app:lottie_repeatCount="1" />
 
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                    <!--
-                    <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/toolbar1"
-                        android:layout_width="match_parent"
-                        android:layout_height="?android:actionBarSize"
-                        android:elevation="7dp"
-                        app:layout_collapseMode="pin">
-
-                    </androidx.appcompat.widget.Toolbar>
-                    -->
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
-                </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerViewBes"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout">
+            app:layout_constraintTop_toBottomOf="@+id/collapsingToolbar"
+            />
 
-        </androidx.recyclerview.widget.RecyclerView>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 
 
-    <!--
-
-    -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
