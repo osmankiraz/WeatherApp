@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var listHavaArray:ArrayList<besGunHava>
 
 
+
     val dbWeather by lazy { DBWeatherHelper(this) }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -96,6 +97,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        collapsingToolbar.title="colBar"
+        collapsingToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.snowBir))
         listHavaArray=ArrayList<besGunHava>()
 
 
