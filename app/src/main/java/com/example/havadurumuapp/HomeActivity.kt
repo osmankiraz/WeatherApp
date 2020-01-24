@@ -7,6 +7,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import kotlinx.android.synthetic.main.activity_home.*
+import maes.tech.intentanim.CustomIntent.customType
 
 class HomeActivity : AppCompatActivity() {
 
@@ -34,17 +35,34 @@ class HomeActivity : AppCompatActivity() {
             override fun onClick(p0: View?) {
                 val intent=Intent(this@HomeActivity,MainActivity::class.java)
                 startActivity(intent)
+                customType(this@HomeActivity,"left-to-right")
             }
 
+        })
+
+        imgSemsiye.setOnClickListener(object:View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val intent=Intent(this@HomeActivity,MainActivity::class.java)
+                startActivity(intent)
+                customType(this@HomeActivity,"left-to-right")
+
+            }
         })
 
         tvCurrency.setOnClickListener(object:View.OnClickListener{
             override fun onClick(p0: View?) {
                 val intent=Intent(this@HomeActivity,CurrencyActivity::class.java)
                 startActivity(intent)
-
+                customType(this@HomeActivity,"right-to-left")
             }
         })
+        imgExchange.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val intent=Intent(this@HomeActivity,CurrencyActivity::class.java)
+                startActivity(intent)
+                customType(this@HomeActivity,"right-to-left")
+            }
 
+        })
     }
 }

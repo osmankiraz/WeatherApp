@@ -40,8 +40,8 @@
         android:id="@+id/imgBesgunIcon"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginLeft="50dp"
-        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="53dp"
+        android:layout_gravity="center_vertical |center |center_horizontal"
         android:src="@drawable/icon_01"/>
 
     <TextView
@@ -76,6 +76,4 @@
         android:textSize="20sp"
         android:layout_marginLeft="4dp"
         android:layout_gravity="center_vertical" />
-
-
 </LinearLayout>

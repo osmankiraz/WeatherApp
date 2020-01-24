@@ -34,6 +34,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/snowBir"
                 app:contentScrim="@color/colorPrimary"
+                app:collapsedTitleGravity="center"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <androidx.appcompat.widget.Toolbar

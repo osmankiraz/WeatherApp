@@ -11,6 +11,8 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+anim bottom_to_up
+anim bottom_to_up2
 anim btn_checkbox_to_checked_box_inner_merged_animation
 anim btn_checkbox_to_checked_box_outer_merged_animation
 anim btn_checkbox_to_checked_icon_null_animation
@@ -29,8 +31,18 @@ anim design_snackbar_in
 anim design_snackbar_out
 anim doksanrotate
 anim downtoupinfinity
+anim fade_in
+anim fade_out
+anim left_to_right
 anim lefttoright
+anim push_left_in
+anim push_left_out
+anim right_to_left
 anim righttoleft
+anim rotatein_out
+anim rotateout_in
+anim up_to_bottom
+anim up_to_bottom2
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -656,6 +668,7 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimary2
+color colorPrimary3
 color colorPrimaryDark
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
@@ -1097,9 +1110,6 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
-drawable buson
-drawable dag
-drawable dagvar
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1109,7 +1119,7 @@ drawable design_snackbar_background
 drawable dolar
 drawable dovizarkaplan
 drawable euro
-drawable gecearkaplan
+drawable geceplanikes
 drawable ic_euro
 drawable ic_kafein_launcher_background
 drawable ic_launcher_background
@@ -1216,9 +1226,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id btnDelete
-id btnRead
-id btnSonKayit
 id buttonPanel
 id center
 id center_horizontal
@@ -1416,7 +1423,6 @@ id tvTarih
 id tvWeather
 id txtBesGeceSicaklik
 id txtBesGunduzSicaklik
-id txtDenemeMedium
 id txtGunTarih
 id txtSayiTarih
 id unchecked
@@ -2152,3 +2158,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+transition explode1

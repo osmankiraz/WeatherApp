@@ -12,6 +12,7 @@ import org.json.JSONObject
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
+import maes.tech.intentanim.CustomIntent.customType
 
 class CurrencyActivity : AppCompatActivity() {
     var dovizTr: String? = null
@@ -28,21 +29,7 @@ class CurrencyActivity : AppCompatActivity() {
         dolarVeriGetir("USD")
         euroVeriGetir()
 
-        btnSonKayit.setOnClickListener {
-            val lastDolarDegeri = dbMoney.lastValue()
-            Log.e("OSMAN", "SON DOLAR DEGERİ BU MU ===" + lastDolarDegeri)
-            Log.e("OSMAN", "CURRENT TİME DEĞİŞKENİ ===" + currentDateTime)
-            Log.e("OSMAN", " APİ DATE VERİSİ KONTROL === " + apiDateStr)
-            var lastDBDate: String = dbMoney.lastDateValue()
-            Log.e("OSMAN", " SON DB DATE VERİSİ === " + lastDBDate)
-        }
 
-        btnDelete.setOnClickListener {
-            dbMoney.deleteAllData()
-        }
-        btnRead.setOnClickListener {
-            showData(dbMoney.readData())
-        }
 
     }
 
@@ -193,13 +180,7 @@ class CurrencyActivity : AppCompatActivity() {
     }
 
 
-    fun showData(list: MutableList<ParaBirimleriTablo>) {
-        txtDenemeMedium.text = ""
-        list.forEach {
-            txtDenemeMedium.text =
-                txtDenemeMedium.text.toString() + "\n" + it.dollar + " " + it.euro + " " + it.date
-        }
-    }
+
 
     fun tarihYazdir(): String {
 
@@ -211,6 +192,11 @@ class CurrencyActivity : AppCompatActivity() {
 
         return formattedCurrentTime
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        customType(this@CurrencyActivity,"left-to-right")
     }
 
 }

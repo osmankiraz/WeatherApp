@@ -31,10 +31,9 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
+import maes.tech.intentanim.CustomIntent.customType
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
-
-
     var tvSehir: TextView? = null
     var location: SimpleLocation? = null
     var latitude: String? = null
@@ -43,15 +42,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var locationKey: String
     lateinit var listHavaArray:ArrayList<besGunHava>
 
-
-
     val dbWeather by lazy { DBWeatherHelper(this) }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
 
 
     }
-
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         tvSehir = view as TextView
@@ -97,43 +93,24 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        collapsingToolbar.title="colBar"
-        collapsingToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.snowBir))
+
         listHavaArray=ArrayList<besGunHava>()
-
-
         // İTEM POSİTİON 0 A KOYA BİLİRSİN BELKİ BUNU
         // ACILIR BİR PENCERE CIKICAK ORADAKİ EDİTTEXTE GİRİLEN ŞEHİR VERİGETİR'E PARAMETRE OLARAK GELECEK AMA
         // O VERİYİ STRİNG.XMLE KAYDEDEMİYORUM TEKRARDAN RESOURCES İÇİNE KAYDEDİLMİYORMUŞ ONLY READ OLD. ICIN
-
-
         var spinnerAdapter =
             ArrayAdapter.createFromResource(this, R.array.sehirler, R.layout.spinner_tek_satir)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-
         // ARROW COLOR CHANGE
         spnSehirler.getBackground().setColorFilter(
             getResources().getColor(R.color.colorPrimaryDark),
             PorterDuff.Mode.SRC_ATOP
         )
-
-
-
         spnSehirler.adapter = spinnerAdapter
         spnSehirler.setTitle("Şehir Seçiniz")
         spnSehirler.onItemSelectedListener =
             this // SPİNNERDAN BİŞEY SEÇİLDİĞİNDE BİR HAREKET OLMASI İÇİN BUNU YAZMAK ZORUNDAYIZ
-
-
         spnSehirler.setSelection(1)
-        Log.e("OSMAN", "MAİN İÇİ ->")
-
-
-        //spinnerAdapter.add("Value")
-        //spinnerAdapter.notifyDataSetChanged()
-
-
     }
 
     private fun oAnkiSehriGetir(lat: String?, longt: String?) {
@@ -334,6 +311,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     // Ş E H İ R    V E R İ L E R İ N İ     G E T İ R E N   F O N K S İ Y O N
     fun verileriGetir(sehir: String) {
 
+        collapsingToolbar.title=sehir
+        collapsingToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.snowBir))
 
         val ankaraUrl =
             "https://api.openweathermap.org/data/2.5/weather?q=" + sehir + "&appid=e57955a0fa8d61bebd89532dd21f4c15&lang=tr&units=metric"
@@ -355,7 +334,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     var sehirVarmi: Boolean
                     sehirVarmi = dbWeather.isEmptyTable()
                     Log.e("OSMAN", "TABLO BOŞ İSE TRU GELECEK? ? = " + sehirVarmi)
-
 
                     var kacTaneSehir = 0
                     kacTaneSehir = dbWeather.kacTane(sehir)
@@ -546,7 +524,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         if (iconInner?.last() == 'd') {    // G Ü N D Ü Z
 
             tvSehir?.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            collapsingToolbar.background = getDrawable(R.drawable.dagvar)
+            collapsingToolbar.background = getDrawable(R.color.colorPrimary3)
 
             tvAciklama.setTextColor(resources.getColor(R.color.colorPrimaryDark))
             tvSicaklik.setTextColor(resources.getColor(R.color.colorPrimaryDark))
@@ -560,7 +538,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         } else {  //  G E C E
             tvSehir?.setTextColor(resources.getColor(R.color.snowBir))
 
-            collapsingToolbar.background = getDrawable(R.drawable.gecearkaplan)
+            collapsingToolbar.background = getDrawable(R.drawable.geceplanikes)
 
             tvAciklama.setTextColor(resources.getColor(R.color.snowBir))
             tvSicaklik.setTextColor(resources.getColor(R.color.snowBir))
@@ -686,7 +664,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
-
     fun setupRecyclerView(listHava: ArrayList<besGunHava>?) {
         var myAdapter = RecyclerViewAdapter(this, listHava!!)
         recyclerViewBes.layoutManager=LinearLayoutManager(this)
@@ -694,11 +671,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        customType(this@MainActivity,"right-to-left")
+    }
 
 }
-
 private fun String?.sonKarakteriSil(): String {
     // 50n olan ifadeyi 50 olarak geri döndürür.
     return this!!.substring(0, this!!.length - 1)
-
 }
