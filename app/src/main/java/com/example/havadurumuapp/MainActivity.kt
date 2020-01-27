@@ -21,6 +21,7 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.example.havadurumuapp.Adapter.RecyclerViewAdapter
 import com.example.havadurumuapp.Model.besGunHava
+import com.rhexgomez.typer.roboto.TyperRoboto
 import im.delight.android.location.SimpleLocation
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONArray
@@ -39,8 +40,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var latitude: String? = null
     var longitude: String? = null
     var tersEdildiMi: Boolean = false
+    lateinit var localizedName: String
     lateinit var locationKey: String
-    lateinit var listHavaArray:ArrayList<besGunHava>
+    lateinit var listHavaArray: ArrayList<besGunHava>
 
     val dbWeather by lazy { DBWeatherHelper(this) }
 
@@ -74,17 +76,22 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     location = SimpleLocation(this)
                     latitude = String.format("%.2f", location?.latitude)
                     longitude = String.format("%.2f", location?.longitude)
+                    var latitudeInt = String.format("%s", location?.latitude?.toInt())
+                    var longitudeInt = String.format("%s", location?.longitude?.toInt())
+                    Log.e("KOR", "latitude" + latitude)
+                    Log.e("KOR", "longitude" + longitude)
+                    Log.e("KOR", "latitudeINT" + latitudeInt)
+                    Log.e("KOR", "longitudeINT" + longitudeInt)
+                    //fetchingLocationKeyOankiSehir(latitudeInt, longitudeInt)
                     oAnkiSehriGetir(latitude, longitude)
                 }
             }
-
-
         } else {
             // SPİNNERDAN SECİLEN SEHRİN VERİLERİNİN BASILDIĞI KISIM
             var secilenSehir = parent?.getItemAtPosition(position).toString()
             tvSehir = view as TextView
             verileriGetir(secilenSehir)
-            fetchingLocationKey(secilenSehir)
+            //fetchingLocationKey(secilenSehir)
 
         }
     }
@@ -94,7 +101,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         setContentView(R.layout.activity_main)
 
 
-        listHavaArray=ArrayList<besGunHava>()
+        listHavaArray = ArrayList<besGunHava>()
         // İTEM POSİTİON 0 A KOYA BİLİRSİN BELKİ BUNU
         // ACILIR BİR PENCERE CIKICAK ORADAKİ EDİTTEXTE GİRİLEN ŞEHİR VERİGETİR'E PARAMETRE OLARAK GELECEK AMA
         // O VERİYİ STRİNG.XMLE KAYDEDEMİYORUM TEKRARDAN RESOURCES İÇİNE KAYDEDİLMİYORMUŞ ONLY READ OLD. ICIN
@@ -115,6 +122,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private fun oAnkiSehriGetir(lat: String?, longt: String?) {
 
+
         var sehirAdi: String? = null
 
         val sehirUrl =
@@ -127,10 +135,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 override fun onResponse(response: JSONObject?) {
                     var main = response?.getJSONObject("main")
                     var sicaklik = main?.getInt("temp")
-                    //tvSicaklik.text = sicaklik.toString() ////////////////////////////////////////////////
-
                     sehirAdi = response?.getString("name")
-                    //tvSehir?.setText(sehirAdi)//////////////////////////////////////////
                     Log.e("OSMAN", "sehir adi : " + sehirAdi)
                     Log.e("OSMAN", "lat : " + lat)
                     Log.e("OSMAN", "long : " + longt)
@@ -140,12 +145,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     //tvAciklama.text = aciklama  ///////////////////////////////////////
                     var icon = weather?.getJSONObject(0)?.getString("icon")
 
-                    //geceGunduzIcon(icon.toString()) /////////////////////////////
-
                     var sehirVarmi: Boolean
                     sehirVarmi = dbWeather.isEmptyTable()
                     Log.e("OSMAN", "TABLO BOŞ İSE TRU GELECEK? ? = " + sehirVarmi)
-                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                     var kacTaneSehir = 0
                     kacTaneSehir = dbWeather.kacTane(sehirAdi!!)
@@ -184,7 +186,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             Log.e("OSMAN", "KARŞILATIRMADA HEPSİ EŞİT ÇIKTI")
                             Log.e("OSMAN", "VERİLER SADECE DB DEN ALINARAK YAZILDI")
 
-                            tvSehir?.setText(sehirAdi)
+                            tvSehir?.setText(localizedName)
+                            //tvSehir?.setText(sehirAdi)
                             tvSicaklik.text = strCityTemp
                             tvAciklama.text = strCityDescription
                             tvTarih.text = tarihYazdir()
@@ -244,14 +247,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             dbWeather.findSelectedCityDescription(sehirAdi.toString())
                         var yeniSehirIcon2 = dbWeather.findSelectedCityIcon(sehirAdi.toString())
 
-                        tvSehir?.setText(yeniSehirAdi2)
+                        tvSehir?.setText(localizedName)
+                        //tvSehir?.setText(yeniSehirAdi2)
                         tvSicaklik.text = yeniSehirSicaklik2
                         tvAciklama.text = yeniSehirAciklama2
                         tvTarih.text = tarihYazdir()
                         geceGunduzIcon(yeniSehirIcon2)
                         Log.e("OSMAN", "YENİ VERİLER DBYE YAZILDI ARDINDAN EKRANA BASILDI")
-
-
                     } else {  // SEHİRDEN DB DE 2 VEYA DAHA FAZLA OLMASI DURUMU !!! İSTENMEYEN DURUM
                         Log.e("OSMAN", "SEHİR DBYE 2 >= KAYDEDİLMİŞ")
                         dbWeather.deleteSelectedCity(sehirAdi.toString())
@@ -270,7 +272,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                             dbWeather.findSelectedCityDescription(sehirAdi.toString())
                         var yeniSehirIcon3 = dbWeather.findSelectedCityIcon(sehirAdi.toString())
 
-                        tvSehir?.setText(yeniSehirAdi3)
+                        tvSehir?.setText(localizedName)
+                        //tvSehir?.setText(yeniSehirAdi3)
                         tvSicaklik.text = yeniSehirSicaklik3
                         tvAciklama.text = yeniSehirAciklama3
                         tvTarih.text = tarihYazdir()
@@ -299,6 +302,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 location = SimpleLocation(this)
                 latitude = String.format("%.2f", location?.latitude)
                 longitude = String.format("%.2f", location?.longitude)
+                var latitudeInt = String.format("%s", location?.latitude?.toInt())
+                var longitudeInt = String.format("%s", location?.longitude?.toInt())
+                Log.e("KOR", "latitude" + latitude)
+                Log.e("KOR", "longitude" + longitude)
+                Log.e("KOR", "latitudeINT" + latitudeInt)
+                Log.e("KOR", "longitudeINT" + longitudeInt)
+                //fetchingLocationKeyOankiSehir(latitudeInt, longitudeInt)
                 oAnkiSehriGetir(latitude, longitude)
             } else {
                 spnSehirler.setSelection(1)
@@ -311,7 +321,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     // Ş E H İ R    V E R İ L E R İ N İ     G E T İ R E N   F O N K S İ Y O N
     fun verileriGetir(sehir: String) {
 
-        collapsingToolbar.title=sehir
+        collapsingToolbar.title = sehir
+        collapsingToolbar.apply {
+            setCollapsedTitleTypeface(TyperRoboto.ROBOTO_REGULAR)
+            setExpandedTitleTypeface(TyperRoboto.ROBOTO_ITALIC)
+        }
+
+        //collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsedAppBar)
+        //collapsingToolbar.setCollapsedTitleTextAppearance(R.style.ExpandedAppBar)
         collapsingToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.snowBir))
 
         val ankaraUrl =
@@ -523,23 +540,20 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     fun geceGunduzIcon(iconInner: String) {
         if (iconInner?.last() == 'd') {    // G Ü N D Ü Z
 
-            tvSehir?.setTextColor(resources.getColor(R.color.colorPrimaryDark))
+            tvSehir?.setTextColor(resources.getColor(R.color.snowBir))
             collapsingToolbar.background = getDrawable(R.color.colorPrimary3)
-
-            tvAciklama.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            tvSicaklik.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            tvTarih.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-            tvSantigrad.setTextColor(resources.getColor(R.color.colorPrimaryDark))
+            tvAciklama.setTextColor(resources.getColor(R.color.snowBir))
+            tvSicaklik.setTextColor(resources.getColor(R.color.snowBir))
+            tvTarih.setTextColor(resources.getColor(R.color.snowBir))
+            tvSantigrad.setTextColor(resources.getColor(R.color.snowBir))
             spnSehirler.getBackground().setColorFilter(
-                getResources().getColor(R.color.colorPrimaryDark),
+                getResources().getColor(R.color.snowBir),
                 PorterDuff.Mode.SRC_ATOP
             )
 
         } else {  //  G E C E
             tvSehir?.setTextColor(resources.getColor(R.color.snowBir))
-
             collapsingToolbar.background = getDrawable(R.drawable.geceplanikes)
-
             tvAciklama.setTextColor(resources.getColor(R.color.snowBir))
             tvSicaklik.setTextColor(resources.getColor(R.color.snowBir))
             tvTarih.setTextColor(resources.getColor(R.color.snowBir))
@@ -569,18 +583,48 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             animationWeather.loop(true)
             animationWeather.playAnimation()
         } else if ((animDosyaAdi != R.raw.anim04) && (tersEdildiMi == true)) {
-            Log.e("BOOLEAN", "ELse if DEGER = " + tersEdildiMi)
-            animationWeather.setAnimation(animDosyaAdi)
-            animationWeather.reverseAnimationSpeed()
-            animationWeather.visibility = View.VISIBLE
-            animationWeather.loop(true)
-            animationWeather.playAnimation()
+            if ((animDosyaAdi == R.raw.anim01) && (iconInner?.last() == 'n')) {
+                animationWeather.setAnimation(R.raw.geceayveyildizlar)
+                animationWeather.reverseAnimationSpeed()
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+                tersEdildiMi = false
+            } else if ((animDosyaAdi == R.raw.anim02) && (iconInner?.last() == 'n')) {
+                animationWeather.setAnimation(R.raw.moon02)
+                animationWeather.reverseAnimationSpeed()
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+                tersEdildiMi = false
+            } else {
+                Log.e("BOOLEAN", "ELse if DEGER = " + tersEdildiMi)
+                animationWeather.setAnimation(animDosyaAdi)
+                animationWeather.reverseAnimationSpeed()
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+                tersEdildiMi = false
+            }
         } else {
-            Log.e("BOOLEAN", " Else DEGER = " + tersEdildiMi)
-            animationWeather.setAnimation(animDosyaAdi)
-            animationWeather.visibility = View.VISIBLE
-            animationWeather.loop(true)
-            animationWeather.playAnimation()
+            if ((animDosyaAdi == R.raw.anim01) && (iconInner?.last() == 'n')) {
+                animationWeather.setAnimation(R.raw.geceayveyildizlar)
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+            }else if ((animDosyaAdi == R.raw.anim02) && (iconInner?.last() == 'n')) {
+                animationWeather.setAnimation(R.raw.moon02)
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+                tersEdildiMi = false
+            } else {
+                Log.e("BOOLEAN", "ELse if DEGER = " + tersEdildiMi)
+                animationWeather.setAnimation(animDosyaAdi)
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+            }
         }
     }
 
@@ -588,71 +632,70 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         listHavaArray.clear()
         val locationKeyUrl =
-            "https://dataservice.accuweather.com/locations/v1/cities/search?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&q=" + sehirAdiLocKey + "&language=tr&details=false"
+            "https://dataservice.accuweather.com/locations/v1/cities/search?apikey=tME4hGctpv11dTd92pVKmFxiXIEtVKmk&q=" + sehirAdiLocKey + "&language=tr&details=false"
+       // val locationKeyUrl =
+            //"https://dataservice.accuweather.com/locations/v1/cities/search?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&q=" + sehirAdiLocKey + "&language=tr&details=false"
         var request = JsonArrayRequest(locationKeyUrl, object : Response.Listener<JSONArray> {
             override fun onResponse(response: JSONArray?) {
 
                 var jsonobjectDeneme = response?.getJSONObject(0)
                 locationKey = jsonobjectDeneme!!.getString("Key")
                 Log.e("OSMAN", sehirAdiLocKey + "Şehrinin location keyi bu mu ? = " + locationKey)
-
-//////////////////////////
                 var keyliUrl =
-                    "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + locationKey + "?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&language=tr&details=false&metric=true"
+                    "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + locationKey + "?apikey=tME4hGctpv11dTd92pVKmFxiXIEtVKmk&language=tr&details=false&metric=true"
+                //var keyliUrl =
+                   // "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + locationKey + "?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&language=tr&details=false&metric=true"
                 var request2 = JsonObjectRequest(
                     Request.Method.GET,
                     keyliUrl,
                     null,
                     object : Response.Listener<JSONObject> {
                         override fun onResponse(response: JSONObject?) {
-
-
-                            for(i in 0..4){
+                            for (i in 0..4) {
                                 var dailyForecast = response?.getJSONArray("DailyForecasts")
-                                Log.e("OSMAN","response uzunluğu for içi: "+ response!!.length())
+                                Log.e("OSMAN", "response uzunluğu for içi: " + response!!.length())
                                 try {
-                                    var dateDeneme = dailyForecast?.getJSONObject(i)?.getString("Date")
+                                    var dateDeneme =
+                                        dailyForecast?.getJSONObject(i)?.getString("Date")
                                     var dayName = tarihYazdirGunAdi(dateDeneme!!)
                                     var mounthNumberDay = tarihYazdirAyGun(dateDeneme!!)
                                     var minimumTemp =
-                                        dailyForecast?.getJSONObject(i)?.getJSONObject("Temperature")
+                                        dailyForecast?.getJSONObject(i)
+                                            ?.getJSONObject("Temperature")
                                             ?.getJSONObject("Minimum")?.getDouble("Value")
                                     var maximumTemp =
-                                        dailyForecast?.getJSONObject(i)?.getJSONObject("Temperature")
+                                        dailyForecast?.getJSONObject(i)
+                                            ?.getJSONObject("Temperature")
                                             ?.getJSONObject("Maximum")?.getDouble("Value")
-                                    var accuIcon = dailyForecast?.getJSONObject(i)?.getJSONObject("Day")
-                                        ?.getInt("Icon")
+                                    var accuIcon =
+                                        dailyForecast?.getJSONObject(i)?.getJSONObject("Day")
+                                            ?.getInt("Icon")
 
-                                    var iconNameFormatter=resources.getIdentifier("aicon"+accuIcon,"drawable",packageName)
+                                    var iconNameFormatter = resources.getIdentifier(
+                                        "aicon" + accuIcon,
+                                        "drawable",
+                                        packageName
+                                    )
 
-                                    var besGunHavaDeger=besGunHava()
-                                    besGunHavaDeger.gunAdi=dayName
-                                    besGunHavaDeger.gunAyNumber=mounthNumberDay
-                                    besGunHavaDeger.minimumTemp=minimumTemp!!.toInt()
-                                    besGunHavaDeger.maximumTemp=maximumTemp!!.toInt()
-                                    besGunHavaDeger.accuIcon=iconNameFormatter
+                                    var besGunHavaDeger = besGunHava()
+                                    besGunHavaDeger.gunAdi = dayName
+                                    besGunHavaDeger.gunAyNumber = mounthNumberDay
+                                    besGunHavaDeger.minimumTemp = minimumTemp!!.toInt()
+                                    besGunHavaDeger.maximumTemp = maximumTemp!!.toInt()
+                                    besGunHavaDeger.accuIcon = iconNameFormatter
                                     listHavaArray.add(besGunHavaDeger)
 
-                                }catch (e:JSONException){
-                                    Log.e("OSMAN","try catch hata vardi : "+ e.printStackTrace() )
+                                } catch (e: JSONException) {
+                                    Log.e("OSMAN", "try catch hata vardi : " + e.printStackTrace())
                                 }
                                 setupRecyclerView(listHavaArray)
-
                             }
-
-
-
                         }
                     },
                     object : Response.ErrorListener {
                         override fun onErrorResponse(error: VolleyError?) {}
                     })
                 MySingleton.getInstance(this@MainActivity).addToRequestQueue(request2)
-
-
- /////////////////////////
-
-
             }
         }, object : Response.ErrorListener {
             override fun onErrorResponse(error: VolleyError?) {
@@ -660,23 +703,116 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
         })
         MySingleton.getInstance(this).addToRequestQueue(request)
+    }
 
+    fun fetchingLocationKeyOankiSehir(lat: String, longt: String) {
+        listHavaArray.clear()
+
+        val locationKeyOan =
+            "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=tME4hGctpv11dTd92pVKmFxiXIEtVKmk&q=" + lat + "%2C" + longt + "&language=tr&details=false&toplevel=false"
+
+        //val locationKeyOan =
+            //"https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&q=" + lat + "%2C" + longt + "&language=tr&details=false&toplevel=false"
+        var requestOan = JsonObjectRequest(
+            Request.Method.GET,
+            locationKeyOan,
+            null,
+            object : Response.Listener<JSONObject> {
+                override fun onResponse(response: JSONObject?) {
+                    var key = response?.getString("Key")
+                    localizedName = response?.getString("LocalizedName")!!
+                    collapsingToolbar.title = localizedName
+                    collapsingToolbar.setCollapsedTitleTextColor(resources.getColor(R.color.snowBir))
+
+                    Log.e("OSMAN", "O an ki key ? = " + key)
+                    Log.e("OSMAN", "O an ki localname ? = " + localizedName)
+                    var keyliUrl =
+                        "https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + key + "?apikey=tME4hGctpv11dTd92pVKmFxiXIEtVKmk&language=tr&details=false&metric=true"
+                    //var keyliUrl =
+                        //"https://dataservice.accuweather.com/forecasts/v1/daily/5day/" + key + "?apikey=z547Q7RZHRcI3FITkEgqwQLdBoyADvLb&language=tr&details=false&metric=true"
+                    var request2 = JsonObjectRequest(
+                        Request.Method.GET,
+                        keyliUrl,
+                        null,
+                        object : Response.Listener<JSONObject> {
+                            override fun onResponse(response: JSONObject?) {
+                                for (i in 0..4) {
+                                    var dailyForecast = response?.getJSONArray("DailyForecasts")
+                                    Log.e(
+                                        "OSMAN",
+                                        "response uzunluğu for içi: " + response!!.length()
+                                    )
+                                    try {
+                                        var dateDeneme =
+                                            dailyForecast?.getJSONObject(i)?.getString("Date")
+                                        var dayName = tarihYazdirGunAdi(dateDeneme!!)
+                                        var mounthNumberDay = tarihYazdirAyGun(dateDeneme!!)
+                                        var minimumTemp =
+                                            dailyForecast?.getJSONObject(i)
+                                                ?.getJSONObject("Temperature")
+                                                ?.getJSONObject("Minimum")?.getDouble("Value")
+                                        var maximumTemp =
+                                            dailyForecast?.getJSONObject(i)
+                                                ?.getJSONObject("Temperature")
+                                                ?.getJSONObject("Maximum")?.getDouble("Value")
+                                        var accuIcon =
+                                            dailyForecast?.getJSONObject(i)?.getJSONObject("Day")
+                                                ?.getInt("Icon")
+
+                                        var iconNameFormatter = resources.getIdentifier(
+                                            "aicon" + accuIcon,
+                                            "drawable",
+                                            packageName
+                                        )
+
+                                        var besGunHavaDeger = besGunHava()
+                                        besGunHavaDeger.gunAdi = dayName
+                                        besGunHavaDeger.gunAyNumber = mounthNumberDay
+                                        besGunHavaDeger.minimumTemp = minimumTemp!!.toInt()
+                                        besGunHavaDeger.maximumTemp = maximumTemp!!.toInt()
+                                        besGunHavaDeger.accuIcon = iconNameFormatter
+                                        listHavaArray.add(besGunHavaDeger)
+
+                                    } catch (e: JSONException) {
+                                        Log.e(
+                                            "OSMAN",
+                                            "try catch hata vardi : " + e.printStackTrace()
+                                        )
+                                    }
+                                    setupRecyclerView(listHavaArray)
+                                }
+                            }
+                        },
+                        object : Response.ErrorListener {
+                            override fun onErrorResponse(error: VolleyError?) {}
+                        })
+                    MySingleton.getInstance(this@MainActivity).addToRequestQueue(request2)
+                }
+
+            },
+            object : Response.ErrorListener {
+                override fun onErrorResponse(error: VolleyError?) {
+                    Log.e("OSMAN", "Error Listener ", error)
+                }
+            })
+        MySingleton.getInstance(this).addToRequestQueue(requestOan)
 
     }
 
     fun setupRecyclerView(listHava: ArrayList<besGunHava>?) {
         var myAdapter = RecyclerViewAdapter(this, listHava!!)
-        recyclerViewBes.layoutManager=LinearLayoutManager(this)
-        recyclerViewBes.adapter=myAdapter
+        recyclerViewBes.layoutManager = LinearLayoutManager(this)
+        recyclerViewBes.adapter = myAdapter
 
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-        customType(this@MainActivity,"right-to-left")
+        customType(this@MainActivity, "right-to-left")
     }
 
 }
+
 private fun String?.sonKarakteriSil(): String {
     // 50n olan ifadeyi 50 olarak geri döndürür.
     return this!!.substring(0, this!!.length - 1)

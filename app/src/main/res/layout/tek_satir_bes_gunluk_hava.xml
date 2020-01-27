@@ -1,79 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="100dp">
 
-    <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ictekiConsraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <View
+            android:id="@+id/golgelik123"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/golgelik"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></View>
+
 
         <TextView
             android:id="@+id/txtSayiTarih"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="24dp"
             android:text="22 Ocak"
             android:textSize="16sp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center">
-
-        </TextView>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <TextView
             android:id="@+id/txtGunTarih"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:text="Perşembe"
             android:textSize="20sp"
-            android:layout_marginTop="0dp"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txtSayiTarih"
+            app:layout_constraintStart_toStartOf="@+id/txtSayiTarih"
+            app:layout_constraintTop_toBottomOf="@+id/txtSayiTarih"></TextView>
 
-        </TextView>
+        <ImageView
+            android:id="@+id/imgBesgunIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icon_01"
+            app:layout_constraintBottom_toBottomOf="@+id/txtGunTarih"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtSayiTarih" />
+
+        <TextView
+            android:id="@+id/txtBesGunduzSicaklik"
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:text="10"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBesgunIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.712"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgBesgunIcon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:text="°C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtBesGunduzSicaklik"
+            app:layout_constraintStart_toEndOf="@+id/txtBesGunduzSicaklik"
+            app:layout_constraintTop_toTopOf="@+id/txtBesGunduzSicaklik" />
+
+        <TextView
+            android:id="@+id/txtBesGeceSicaklik"
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:text="10"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtBesGunduzSicaklik"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.908"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtBesGunduzSicaklik"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="°C"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtBesGeceSicaklik"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txtBesGeceSicaklik"
+            app:layout_constraintTop_toTopOf="@+id/txtBesGeceSicaklik"
+            app:layout_constraintVertical_bias="0.521" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imgBesgunIcon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="53dp"
-        android:layout_gravity="center_vertical |center |center_horizontal"
-        android:src="@drawable/icon_01"/>
 
-    <TextView
-        android:id="@+id/txtBesGunduzSicaklik"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:text="10"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_gravity="center_vertical"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="°C"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginLeft="4dp"
-        android:layout_gravity="center_vertical" />
-    <TextView
-        android:id="@+id/txtBesGeceSicaklik"
-        android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:text="10"
-        android:textSize="35sp"
-        android:layout_marginLeft="20dp"
-        android:layout_gravity="center"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="°C"
-        android:textSize="20sp"
-        android:layout_marginLeft="4dp"
-        android:layout_gravity="center_vertical" />
 </LinearLayout>

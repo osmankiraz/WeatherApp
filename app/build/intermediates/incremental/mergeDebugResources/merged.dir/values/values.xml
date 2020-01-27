@@ -282,6 +282,7 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+    <color name="bulutRengiDeneme">#BBDEFB</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="cardview_dark_background">#FF424242</color>
@@ -312,6 +313,7 @@
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="golgelik">#dbdbdb</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="material_blue_grey_800">#ff37474f</color>
@@ -2158,6 +2160,16 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
+    <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">0sp</item>
+        <item name="android:textColor">@color/snowBir</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/snowBir</item>
+        <item name="android:textStyle">normal</item>
+    </style>
     <style name="Platform.AppCompat" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -2716,6 +2728,31 @@
     <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense
     </item>
   </style>
+    <style name="TyperLib.Theme" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="TyperLib.Theme.Roboto.Bold" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_bold</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.BoldItalic" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_bold_italic</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.Italic" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_italic</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.Light" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_light</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.LightItalic" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_light_italic</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.Regular" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_regular</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.Thin" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_thin</item>
+    </style>
+    <style name="TyperLib.Theme.Roboto.ThinItalic" parent="TyperLib.Theme">
+        <item name="android:fontFamily">@font/typer_roboto_thin_italic</item>
+    </style>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid">

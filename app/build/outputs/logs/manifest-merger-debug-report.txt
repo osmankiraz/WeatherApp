@@ -4,6 +4,8 @@ ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:2:1-26:12
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:2:1-26:12
+MERGED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:16:1-34:12
+MERGED from [com.rhexgomez.typer:common:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\a6dfae2f6610862bb02d00b470f3f863\jetified-common-2.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\dc16af42b50c98cf5e8fb55933c46a0f\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.hajiyevelnur92:intentanimation:1.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\9be1f569ef82020d596d638aa0afd620\intentanimation-1.0\AndroidManifest.xml:2:1-11:12
@@ -71,6 +73,8 @@ ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.
 		ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:6:22-76
 application
 ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml:8:5-24:19
+MERGED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:25:5-32:19
+MERGED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:25:5-32:19
 MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:9:5-20
 MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\dc16af42b50c98cf5e8fb55933c46a0f\material-1.0.0\AndroidManifest.xml:22:5-20
@@ -127,6 +131,10 @@ uses-sdk
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
 INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
+MERGED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [com.rhexgomez.typer:common:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\a6dfae2f6610862bb02d00b470f3f863\jetified-common-2.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.rhexgomez.typer:common:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\a6dfae2f6610862bb02d00b470f3f863\jetified-common-2.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.airbnb.android:lottie:3.3.1] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\970dbcad96d1a52c1f973edd81a1fa67\lottie-3.3.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\dc16af42b50c98cf5e8fb55933c46a0f\material-1.0.0\AndroidManifest.xml:20:5-44
@@ -217,3 +225,11 @@ INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManife
 		INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
 		ADDED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
 		INJECTED from C:\reactnative\ornekproje\HavaDurumuApp\app\src\main\AndroidManifest.xml
+provider#com.rhexgomez.typer.common.TyperProvider
+ADDED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:28:9-31:40
+	android:authorities
+		ADDED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:30:13-78
+	android:exported
+		ADDED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.rhexgomez.typer:typer-roboto:2.0.0] C:\Users\Osman\.gradle\caches\transforms-2\files-2.1\adec9fc7a5b1e9d8a8ad8a7811c3a933\jetified-typer-roboto-2.0.0\AndroidManifest.xml:29:13-68
