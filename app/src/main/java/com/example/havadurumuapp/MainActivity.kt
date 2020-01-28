@@ -1,16 +1,25 @@
 package com.example.havadurumuapp
 
 import android.Manifest
+import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +42,11 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 import maes.tech.intentanim.CustomIntent.customType
+import java.io.IOException
+import java.net.HttpURLConnection
+import java.net.MalformedURLException
+import java.net.URL
+
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     var tvSehir: TextView? = null
@@ -82,7 +96,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     Log.e("KOR", "longitude" + longitude)
                     Log.e("KOR", "latitudeINT" + latitudeInt)
                     Log.e("KOR", "longitudeINT" + longitudeInt)
-                    //fetchingLocationKeyOankiSehir(latitudeInt, longitudeInt)
+                    fetchingLocationKeyOankiSehir(latitudeInt, longitudeInt)
                     oAnkiSehriGetir(latitude, longitude)
                 }
             }
@@ -90,8 +104,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             // SPİNNERDAN SECİLEN SEHRİN VERİLERİNİN BASILDIĞI KISIM
             var secilenSehir = parent?.getItemAtPosition(position).toString()
             tvSehir = view as TextView
+
             verileriGetir(secilenSehir)
-            //fetchingLocationKey(secilenSehir)
+            fetchingLocationKey(secilenSehir)
 
         }
     }
@@ -99,6 +114,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
 
         listHavaArray = ArrayList<besGunHava>()
@@ -121,6 +138,40 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     private fun oAnkiSehriGetir(lat: String?, longt: String?) {
+
+        val webLoaderThread = Thread {
+            if (MyReachability.hasInternetConnected(this)){
+                runOnUiThread {
+                    //Toast.makeText(this,"İnternete bağlısınız",Toast.LENGTH_LONG).show()
+                }
+            } else {
+                runOnUiThread {
+                    val builder =AlertDialog.Builder(this)
+                    builder.setTitle("Internet Yok")
+                    builder.setIcon(R.drawable.wifi)
+                    builder.setPositiveButton("Ayarlar",object :DialogInterface.OnClickListener{
+                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                            val intent=Intent()
+                            intent.setAction(Settings.ACTION_WIRELESS_SETTINGS)
+                            startActivity(intent)
+                            customType(this@MainActivity,"fadein-to-fadeout")
+                            finish()
+                        }
+                    })
+                    var draw:Drawable=resources.getDrawable(R.drawable.ic_close_black_24dp)
+                    var drawSet:Drawable=resources.getDrawable(R.drawable.ic_settings_black_24dp)
+                    builder.setNegativeButtonIcon(draw)
+                    builder.setPositiveButtonIcon(drawSet)
+                    builder.setMessage("İnternet Bağlantınızı Açmalısınız")
+                        .setNegativeButton("KAPAT",object :DialogInterface.OnClickListener{
+                            override fun onClick(p0: DialogInterface?, p1: Int) {
+                                finish()
+                            }
+                        }).show()
+                }
+            }
+        }
+        webLoaderThread.start()
 
 
         var sehirAdi: String? = null
@@ -308,7 +359,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 Log.e("KOR", "longitude" + longitude)
                 Log.e("KOR", "latitudeINT" + latitudeInt)
                 Log.e("KOR", "longitudeINT" + longitudeInt)
-                //fetchingLocationKeyOankiSehir(latitudeInt, longitudeInt)
+                fetchingLocationKeyOankiSehir(latitudeInt, longitudeInt)
                 oAnkiSehriGetir(latitude, longitude)
             } else {
                 spnSehirler.setSelection(1)
@@ -320,6 +371,42 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     // Ş E H İ R    V E R İ L E R İ N İ     G E T İ R E N   F O N K S İ Y O N
     fun verileriGetir(sehir: String) {
+
+
+
+        val webLoaderThread = Thread {
+            if (MyReachability.hasInternetConnected(this)){
+                runOnUiThread {
+                    //Toast.makeText(this,"İnternete bağlısınız",Toast.LENGTH_LONG).show()
+                }
+            } else {
+                runOnUiThread {
+                    val builder =AlertDialog.Builder(this)
+                    builder.setTitle("Internet Yok")
+                    builder.setIcon(R.drawable.wifi)
+                    builder.setPositiveButton("Ayarlar",object :DialogInterface.OnClickListener{
+                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                            val intent=Intent()
+                            intent.setAction(Settings.ACTION_WIRELESS_SETTINGS)
+                            startActivity(intent)
+                            customType(this@MainActivity,"fadein-to-fadeout")
+                            finish()
+                        }
+                    })
+                    var draw:Drawable=resources.getDrawable(R.drawable.ic_close_black_24dp)
+                    var drawSet:Drawable=resources.getDrawable(R.drawable.ic_settings_black_24dp)
+                    builder.setNegativeButtonIcon(draw)
+                    builder.setPositiveButtonIcon(drawSet)
+                    builder.setMessage("İnternet Bağlantınızı Açmalısınız")
+                        .setNegativeButton("KAPAT",object :DialogInterface.OnClickListener{
+                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                            finish()
+                        }
+                    }).show()
+                }
+            }
+        }
+        webLoaderThread.start()
 
         collapsingToolbar.title = sehir
         collapsingToolbar.apply {
@@ -502,21 +589,15 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     // 2020-01-01 F O R M A T I N D A     D B ' Y E     Y A Z I L A N    T A R İ H   F O N K İ S Y O N U
     fun tarihYazdir2(): String {
-
-
         var currentTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale("tr"))
         val formattedCurrentTime = currentTime.format(formatter)
-
         return formattedCurrentTime
-
     }
 
     fun tarihYazdirGunAdi(jsonTarih: String): String {
         var gelenZaman: String = jsonTarih
-
         var result: ZonedDateTime = ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
-
         val formatter = DateTimeFormatter.ofPattern("EEEE ", Locale("tr"))
         var formattedTime = result.format(formatter)
         return formattedTime
@@ -525,14 +606,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     fun tarihYazdirAyGun(jsonTarih: String): String {
         var gelenZaman: String = jsonTarih
-
         var result: ZonedDateTime = ZonedDateTime.parse(gelenZaman, DateTimeFormatter.ISO_DATE_TIME)
-
         val formatter = DateTimeFormatter.ofPattern("dd MMMM", Locale("tr"))
         var formattedTime = result.format(formatter)
-
         return formattedTime
-
     }
 
     // gece gunduz icon img yerleştir işi kısaltmak için fonksiyona aldım
@@ -811,6 +888,38 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         customType(this@MainActivity, "right-to-left")
     }
 
+    object MyReachability {
+
+        private val REACHABILITY_SERVER = "https://google.com" // can be any URL you want
+
+        private fun hasNetworkAvailable(context: Context): Boolean {
+            val service = Context.CONNECTIVITY_SERVICE
+            val manager = context.getSystemService(service) as ConnectivityManager?
+            val network = manager?.activeNetworkInfo
+            Log.e("OSMAN", "hasNetworkAvailable: ${(network != null)}")
+            return (network != null)
+        }
+
+        fun hasInternetConnected(context: Context): Boolean {
+            if (hasNetworkAvailable(context)) {
+                try {
+                    val connection = URL(REACHABILITY_SERVER).openConnection() as HttpURLConnection
+                    connection.setRequestProperty("User-Agent", "Test")
+                    connection.setRequestProperty("Connection", "close")
+                    connection.connectTimeout = 1500
+                    connection.connect()
+                    Log.e("OSMAN", "hasInternetConnected: ${(connection.responseCode == 200)}")
+                    return (connection.responseCode == 200)
+                } catch (e: IOException) {
+                    Log.e("OSMAN", "Error checking internet connection", e)
+                }
+            } else {
+                Log.w("OSMAN", "No network available!")
+            }
+            Log.d("OSMAN", "hasInternetConnected: false")
+            return false
+        }
+    }
 }
 
 private fun String?.sonKarakteriSil(): String {

@@ -1,8 +1,14 @@
 package com.example.havadurumuapp
 
+import android.content.DialogInterface
+import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.VolleyError
@@ -34,6 +40,41 @@ class CurrencyActivity : AppCompatActivity() {
     }
 
     fun dolarVeriGetir(currencyUnit: String) {
+
+
+        val webLoaderThread = Thread {
+            if (MainActivity.MyReachability.hasInternetConnected(this)){
+                runOnUiThread {
+                    //Toast.makeText(this,"İnternete bağlısınız", Toast.LENGTH_LONG).show()
+                }
+            } else {
+                runOnUiThread {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Internet Yok")
+                    builder.setIcon(R.drawable.wifi)
+                    builder.setPositiveButton("Ayarlar",object : DialogInterface.OnClickListener{
+                        override fun onClick(p0: DialogInterface?, p1: Int) {
+                            val intent= Intent()
+                            intent.setAction(Settings.ACTION_WIRELESS_SETTINGS)
+                            startActivity(intent)
+                            customType(this@CurrencyActivity,"fadein-to-fadeout")
+                            finish()
+                        }
+                    })
+                    var draw: Drawable =resources.getDrawable(R.drawable.ic_close_black_24dp)
+                    var drawSet: Drawable =resources.getDrawable(R.drawable.ic_settings_black_24dp)
+                    builder.setNegativeButtonIcon(draw)
+                    builder.setPositiveButtonIcon(drawSet)
+                    builder.setMessage("İnternet Bağlantınızı Açmalısınız")
+                        .setNegativeButton("KAPAT",object : DialogInterface.OnClickListener{
+                            override fun onClick(p0: DialogInterface?, p1: Int) {
+                                finish()
+                            }
+                        }).show()
+                }
+            }
+        }
+        webLoaderThread.start()
 
         val dolarUrl = "https://api.exchangeratesapi.io/latest?base=" + currencyUnit
         val dovizObje = JsonObjectRequest(
