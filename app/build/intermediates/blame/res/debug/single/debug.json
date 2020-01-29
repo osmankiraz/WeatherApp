@@ -548,6 +548,10 @@
         "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim04.json"
     },
     {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\debug\\raw_animup.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\animup.json"
+    },
+    {
         "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_icon_11.png.flat",
         "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_11.png"
     },

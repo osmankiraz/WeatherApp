@@ -1,0 +1,698 @@
+[
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim04.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim04.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_geceayveyildizlar.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\geceayveyildizlar.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_menu_item_action_area.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\anim_downtoupinfinity.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\anim\\downtoupinfinity.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_expanded_menu_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_geceplanikes.jpg.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\geceplanikes.jpg"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon21.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon21.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_currency.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\layout\\activity_currency.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon13.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon13.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-sw600dp-v13_mtrl_layout_snackbar.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout-sw600dp-v13\\mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_part_time.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xhdpi\\kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_euro.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\ic_euro.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_kafein_launcher.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_kafein_launcher.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_alert_dialog_button_bar_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon3.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon3.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon35.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon35.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_kafein_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_kafein_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon43.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon43.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_list_menu_item_icon.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_spinner_tek_satir.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\layout\\spinner_tek_satir.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_searchable_list_dialog.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\36e69b23683d0cfbdd2cafd90b642d85\\searchablespinnerlibrary-1.3.1\\res\\layout\\searchable_list_dialog.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon14.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon14.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_01.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_01.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_animup.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\animup.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\anim_doksanrotate.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\anim\\doksanrotate.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon20.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon20.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_kafein_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_kafein_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_moon02.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\moon02.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon42.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon42.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_layout_tab_text.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_layout_tab_text.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon2.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon2.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon36.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon36.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_mtrl_layout_snackbar_include.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\mtrl_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-v26_abc_screen_toolbar.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout-v26\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_navigation_item_subheader.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon34.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon34.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon4.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon4.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_popup_menu_item_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_home.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim50.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim50.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_custom_dialog.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_bottom_navigation_item.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_select_dialog_multichoice_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_select_dialog_singlechoice_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon26.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon26.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_mode_bar.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_kafein_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_kafein_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_main.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon37.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon37.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim13.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim13.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim03.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim03.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon41.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon41.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon1.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon1.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_navigation_item.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_navigation_item.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_02.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_02.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon11.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon11.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon29.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon29.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_list_menu_item_radio.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_navigation_menu_item.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-sw600dp-v13_design_layout_snackbar.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon7.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon7.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_kafein_launcher_background.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\ic_kafein_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_euro.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\euro.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim02.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim02.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon19.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon19.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_activity_chooser_view.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_semsiyevektor.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\semsiyevektor.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim11.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim11.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim10.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim10.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim01.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim01.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon44.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon44.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon31.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon31.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_close_black_24dp.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\ic_close_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_settings_black_24dp.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\ic_settings_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_layout_snackbar.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_alert_dialog_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_04.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_04.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon32.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon32.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon6.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon6.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_activity_chooser_view_list_item.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_cascading_menu_item_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_cascading_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_mtrl_layout_snackbar.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_tooltip.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_tooltip.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon39.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon39.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_wifi.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\wifi.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_kafein.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\kafein.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon40.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon40.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_50.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_50.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon24.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon24.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_screen_content_include.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_popup_menu_header_item_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_select_dialog_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_screen_simple.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon16.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon16.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_bottom_sheet_dialog.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_kafein_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_kafein_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_list_menu_item_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_tek_satir_bes_gunluk_hava.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\layout\\tek_satir_bes_gunluk_hava.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_bar_title_item.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon5.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon5.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon33.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon33.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_action.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon17.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon17.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-hdpi\\kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_layout_snackbar_include.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\xml_network_security_config.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_dovizarkaplan.jpg.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\dovizarkaplan.jpg"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_11.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_11.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_select_dialog_item_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_dolar.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\dolar.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-mdpi\\kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon23.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon23.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_alert_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon15.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon15.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\anim_lefttoright.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\anim\\lefttoright.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_13.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_13.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_mode_close_item_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon18.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon18.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon22.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon22.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_navigation_item_header.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_kafein_launcher_round.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_kafein_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\anim_righttoleft.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\anim\\righttoleft.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_search_dropdown_item_icons_2line.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_navigation_menu.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_09.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_09.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\2030fc82fe74d67c7ea43a603e67d863\\core-1.1.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon30.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon30.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon8.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon8.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_layout_tab_icon.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_10.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_10.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_navigation_item_separator.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_support_simple_spinner_dropdown_item.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\raw_anim09.json.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\raw\\anim09.json"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_kafein_launcher_round.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_kafein_launcher_round.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_menu_item_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_menu_layout.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon12.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon12.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon25.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon25.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable_aicon38.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable\\aicon38.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_kafein_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxhdpi\\kafein_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_design_text_input_password_icon.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\dc16af42b50c98cf5e8fb55933c46a0f\\material-1.0.0\\res\\layout\\design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_list_menu_item_checkbox.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_bar_up_container.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\font_font_deneme.xml.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\font\\font_deneme.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_search_view.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_icon_03.png.flat",
+        "source": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\src\\main\\res\\drawable-v24\\icon_03.png"
+    },
+    {
+        "merged": "C:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\res\\merged\\release\\layout-watch-v20_abc_alert_dialog_title_material.xml.flat",
+        "source": "C:\\Users\\Osman\\.gradle\\caches\\transforms-2\\files-2.1\\f4b01c689731f736ab9e25b8d9259e53\\appcompat-1.1.0\\res\\layout-watch-v20\\abc_alert_dialog_title_material.xml"
+    }
+]

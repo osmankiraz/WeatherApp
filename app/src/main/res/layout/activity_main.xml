@@ -127,6 +127,21 @@
                         app:lottie_repeatCount="1" />
 
 
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/scroolUpAnim"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="36dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.977"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:lottie_rawRes="@raw/animup"
+                        app:lottie_repeatCount="1">
+
+                    </com.airbnb.lottie.LottieAnimationView>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

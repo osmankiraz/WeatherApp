@@ -1,0 +1,4 @@
+#Wed Jan 29 14:38:37 EET 2020
+base.0=C\:\\reactnative\\ornekproje\\HavaDurumuApp\\app\\build\\intermediates\\dex\\release\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
