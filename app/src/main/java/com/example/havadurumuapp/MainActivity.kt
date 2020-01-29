@@ -611,12 +611,20 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         // animasyon 4 parçalı bulut animasyonu AMA lottie de böyle bir animasyon yok bende kapanan bulut animasyonunu
         // tersten oynatarak sanki parçalı bulut efekti verdim bunun için bir sürü karar yapısı yazmam gerekti
         if (animDosyaAdi == R.raw.anim04) {
-            tersEdildiMi = true  // animasyon reverse edildiğinde true
-            animationWeather.setAnimation(animDosyaAdi)
-            animationWeather.visibility = View.VISIBLE
-            animationWeather.reverseAnimationSpeed()// tersten oynatma animasyonu (reverse)
-            animationWeather.loop(true)
-            animationWeather.playAnimation()
+            if(tersEdildiMi== true){
+                tersEdildiMi = true  // animasyon reverse edildiğinde true
+                animationWeather.setAnimation(animDosyaAdi)
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+            }else{
+                tersEdildiMi = true  // animasyon reverse edildiğinde true
+                animationWeather.setAnimation(animDosyaAdi)
+                animationWeather.visibility = View.VISIBLE
+                animationWeather.reverseAnimationSpeed()// tersten oynatma animasyonu (reverse)
+                animationWeather.loop(true)
+                animationWeather.playAnimation()
+            }
             // bir kere ters edildikten sonra başka şehir tıklandığında animasyonlarda hata çıkmaması için yağtığım kontrol
         } else if ((animDosyaAdi != R.raw.anim04) && (tersEdildiMi == true)) {
             // gece olan yerlerde gece arka planı geliyor
