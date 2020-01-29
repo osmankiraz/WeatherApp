@@ -1,3 +1,3 @@
 # WeatherApp
 
-yeni readme
+ANDROİD HAVA DURUMU VE DÖVİZ UYGULAMASI
