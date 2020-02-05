@@ -6,7 +6,7 @@
 	<li>Dünya'daki bazı populer şehirlerin anlık ve 5 günlük hava durumu</li>
   <li>Bulunduğunuz güne dair dolar ve euro bilgisi</li>
 </ul>
-<h1>Video Test</h>
+<h1>Video Test</h1>
 https://www.youtube.com/watch?v=G8VKng8NKmQ&feature=youtu.be
 
 <h1>SCREENSHOTS</h1>
